@@ -1,0 +1,46 @@
+﻿@model List<Testimonial>
+
+<section id="testimonial" class="testimonial-area pt-120 pb-30 p-relative fix" style="background-color: #28314b;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title center-align mb-50 text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <h2>Müşterilerimiz Bizim İçin Ne Dedi?</h2>
+                </div>
+
+            </div>
+            <div class="col-lg-12">
+                <div class="testimonial-active" data-aos="fade-up" data-aos-duration="1400">
+                    @foreach (var item in Model)
+                    {
+                        <div class="single-testimonial">
+                            <p>“@item.CommentDetail”.</p>
+                            <div class="qt-img">
+                                <img src="/insureyou/img/testimonial/qt-icon.png" alt="img">
+                            </div>
+                            <div class="testi-author">
+                                <img src="@item.ImageUrl" style="width:50px;height:50px;border-radius:50%;object-fit:cover;" alt="img">
+                                <div class="ta-info">
+                                    <h6>@item.NameSurname</h6>
+                                    <span>@item.Title</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row align-items-center">
+
+            <div class="col-md-12 text-center">
+                <div class="text-bg" data-aos="fade-up" data-aos-duration="1000">
+                    <h2>Yorumlarımız</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

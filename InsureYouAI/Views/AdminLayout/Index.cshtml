@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en" class="semi-dark">
+
+@await Component.InvokeAsync("_AdminLayoutHeadComponentPartial")
+ 
+<body>
+
+    <div class="wrapper">
+   
+        @await Component.InvokeAsync("_AdminLayoutNavbarComponentPartial")
+
+        @await Component.InvokeAsync("_AdminLayoutSidebarComponentPartial")
+
+        <main class="page-content">
+
+        @await Component.InvokeAsync("_AdminLayoutBreadCrumbComponentPartial")
+
+            @RenderBody()       
+
+        </main>
+   
+        <div class="overlay nav-toggle-icon"></div>
+
+        <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+
+        @await Component.InvokeAsync("_AdminLayoutSwitcherComponentPartial")     
+
+    </div>
+
+    @await Component.InvokeAsync("_AdminLayoutScriptComponentPartial")
+   
+
+</body>
+
+</html>

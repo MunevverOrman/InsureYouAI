@@ -1,0 +1,113 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "ContactList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card shadow-sm border-0 rounded-4">
+    <div class="card-body">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-4">
+            <h4 class="fw-bold mb-0 text-primary">
+                <i class="bi bi-telephone"></i> İletişim Bilgileri
+            </h4>
+
+            <form class="ms-auto position-relative" style="max-width:260px;">
+                <div class="position-absolute top-50 translate-middle-y px-3">
+                    <i class="bi bi-search text-secondary"></i>
+                </div>
+                <input class="form-control ps-5 rounded-pill shadow-sm"
+                       type="text"
+                       placeholder="Ara...">
+            </form>
+        </div>
+
+        <!-- Contact Cards -->
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+                        <div class="card-body">
+
+                            <!-- Info Grid -->
+                            <div class="row g-3">
+
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-envelope-fill text-primary fs-5"></i>
+                                        <div>
+                                            <div class="fw-semibold">Email</div>
+                                            <div class="text-muted">@item.Email</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-telephone-fill text-success fs-5"></i>
+                                        <div>
+                                            <div class="fw-semibold">Telefon</div>
+                                            <div class="text-muted">@item.Phone</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-geo-alt-fill text-danger fs-5"></i>
+                                        <div>
+                                            <div class="fw-semibold">Adres</div>
+                                            <div class="text-muted">@item.Adress</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Description -->
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-start gap-2">
+                                        <i class="bi bi-info-circle-fill text-info fs-5"></i>
+                                        <div>
+                                            <div class="fw-semibold">Açıklama</div>
+                                            <div class="text-muted">
+                                                @item.Description
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="d-flex gap-2 mt-4 flex-wrap">
+                                <a href="/Contact/UpdateContact/@item.ContactId"
+                                   class="btn btn-outline-warning rounded-pill px-4 shadow-sm">
+                                    <i class="bi bi-pencil-square me-1"></i> Güncelle
+                                </a>
+
+                                <a href="/Contact/DeleteContact/@item.ContactId"
+                                   class="btn btn-outline-danger rounded-pill px-4 shadow-sm">
+                                    <i class="bi bi-trash-fill me-1"></i> Sil
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-4">
+            <a href="/Contact/CreateContact/"
+               class="btn btn-lg btn-primary rounded-pill shadow px-4">
+                <i class="bi bi-plus-circle me-1"></i> Yeni İletişim Bilgisi Ekle
+            </a>
+        </div>
+
+    </div>
+</div>

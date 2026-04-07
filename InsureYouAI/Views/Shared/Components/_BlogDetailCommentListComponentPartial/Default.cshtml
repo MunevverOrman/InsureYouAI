@@ -1,0 +1,24 @@
+﻿@model List<Comment>
+<div class="comment__wrap pb-45">
+    <div class="comment__wrap-title">
+        <h5>Yorumlar (@Model.Count)</h5>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="single__comment mb-35">
+            <div class="comments-avatar">
+                <img src="@item.AppUser.ImageURl" alt="">
+            </div>
+            <div class="comment-text">
+                <div class="avatar-name mb-15">
+                    <h6>@item.AppUser.Name @item.AppUser.Surname</h6>
+                    <span>@item.CommentDate.ToString("dd-MMM-yyyy")</span>
+                </div>
+                <p>@item.CommentDetail</p>
+                
+            </div>
+        </div>
+    }
+  
+  
+</div>

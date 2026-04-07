@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "UserCommentsProfileWithAI";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="profile-cover bg-dark"></div>
+
+<div class="row">
+
+    <div class="col-12 col-lg-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="mb-0">Kullanıcı Yorum AI Analiz Detayları</h5>
+                <hr>
+                <div class="card shadow-none border">
+                    <div class="card-header">
+                        <h6 class="mb-0">Kullanıcı Yorum AI Analizi</h6>
+                    </div>
+                    <div class="card-body">
+                        <pre style="white-space:pre-wrap; font-size:15px">@ViewBag.AIResult</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+        <div class="card shadow-sm border-0 overflow-hidden">
+            <div class="card-body">
+                <div class="profile-avatar text-center">
+                    <img src="@ViewBag.imageUrl" class="rounded-circle shadow" width="120" height="120" alt="">
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-5 gap-3">
+                    <div class="text-center">
+                        <h4 class="mb-0">45</h4>
+                        <p class="mb-0 text-secondary">Friends</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="mb-0">15</h4>
+                        <p class="mb-0 text-secondary">Photos</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="mb-0">86</h4>
+                        <p class="mb-0 text-secondary">Comments</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <h4 class="mb-1">@ViewBag.name @ViewBag.surname</h4>
+                    <p class="mb-0 text-secondary">@ViewBag.city</p>
+                    <div class="mt-4"></div>
+                    <h6 class="mb-1">@ViewBag.titlevalue</h6>
+                    <p class="mb-0 text-secondary">@ViewBag.education</p>
+                </div>
+                <hr>
+                <div class="text-start">
+                    <h5 class="">Kullanıcı Hakkında</h5>
+                    <p class="mb-0">@ViewBag.description.
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent border-top">
+                    Followers
+                    <span class="badge bg-primary rounded-pill">95</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                    Following
+                    <span class="badge bg-primary rounded-pill">75</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center bg-transparent">
+                    Templates
+                    <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div><!--end row-->

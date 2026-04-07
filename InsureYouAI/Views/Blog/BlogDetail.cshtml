@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+ @await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body>
+
+    <header class="header-area header-three">
+        @await Component.InvokeAsync("_DefaultHeaderComponentPartial")
+
+        @await Component.InvokeAsync("_DefaultHeaderContactComponentPartial")
+
+        @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+    </header>
+
+    @await Component.InvokeAsync("_DefaultMobileMenuComponentPartial")
+ 
+    <main>
+
+        <section class="inner-blog b-details-p pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog-details-wrap">
+                            @await Component.InvokeAsync("_BlogDetailContentComponentPartial", new { id = ViewBag.i })
+                            @*    Eğer bu bir "Yazarın Blogları" bileşeniyse, id muhtemelen yazarın ID'sidir ve bileşen sadece o yazara ait blogları listelemek için bu ID'yi kullanır. *@
+                            
+
+                            @await Component.InvokeAsync("_BlogDetailNextAndPrevPostComponentPartial", new { id = ViewBag.i })
+
+                            @await Component.InvokeAsync("_BlogDetailAboutAuthorComponentPartial", new { id = ViewBag.i })
+
+                            @await Component.InvokeAsync("_BlogDetailCommentListComponentPartial", new { id = ViewBag.i })
+
+                            @await Html.PartialAsync("~/Views/Blog/AddComment.cshtml")
+
+
+                        </div>
+                    </div>
+                  
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <aside class="sidebar-widget">
+                            @await Html.PartialAsync("~/Views/Blog/GetBlog.cshtml")
+                            @await Component.InvokeAsync("_BlogListSocialMediaComponentPartial")
+
+
+                            @await Component.InvokeAsync("_BlogListCategoriesComponentPartial")
+
+                            @await Component.InvokeAsync("_BlogListLast3RecentBlogComponentPartial")
+
+                            @await Component.InvokeAsync("_BlogListTagComponentPartial")
+                      
+
+                        </aside>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        @await Html.PartialAsync("~/Views/Default/SubscribeEmail.cshtml")
+
+    </main>
+
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptsComponentPartial")
+</body>
+</html>
+
+@*new { id = ViewBag.i }
+//  ↑    ↑     ↑
+//  |    |     ViewBag'den aldığın değer (örn: 5)
+//  |    Component'in beklediği parametre adı
+//  Yeni bir nesne oluştur *@
+
+@* // Normalde bir class tanımlarsın:
+public class Param {
+    public int id { get; set; }
+}
+
+// Sonra kullanırsın:
+new Param { id = ViewBag.i }
+
+// Anonim nesne ise bunu tek satırda yapar, class'a gerek yok:
+new { id = ViewBag.i } *@

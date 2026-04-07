@@ -1,0 +1,87 @@
+﻿@model RevenueExpenseChartViewModel
+
+<div class="col-12 col-lg-8 col-xl-8 d-flex">
+    <div class="card w-100 rounded-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <h6 class="mb-0">Sigorta Satış ve Ödeme Grafiği</h6>
+                <div class="fs-5 ms-auto dropdown">
+                    <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown">
+                        <i class="bi bi-three-dots"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div>
+                    <h4 class="text-success mb-0" id="revenueTotal">₺ @ViewBag.v1</h4>
+                    <p class="mb-0">Gelen Tutar</p>
+                </div>
+                <div class="vr"></div>
+                <div>
+                    <h4 class="text-danger mb-0">@ViewBag.v2</h4>
+                    <p class="mb-0">Giden Tutar</p>
+                </div>
+            </div>
+
+            <!-- Chart Alanı -->
+            <div class="chart-container" style="height: 320px;">
+                <canvas id="revenueExpenseChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const months = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Months));
+        const revenueTotals = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.RevenueTotals));
+        const expenseTotals = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ExpenseTotals));
+
+        const ctx = document.getElementById('revenueExpenseChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: "Gelir",
+                        data: revenueTotals,
+                        fill: true,
+                        borderColor: "green",
+                        backgroundColor: "rgba(0, 128, 0, 0.1)",
+                        tension: 0.4,
+                        borderWidth: 2
+                    },
+                    {
+                        label: "Gider",
+                        data: expenseTotals,
+                        fill: false,
+                        borderColor: "red",
+                        borderDash: [5,5],
+                        tension: 0.4,
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+        });
+    });
+</script>
+

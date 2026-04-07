@@ -1,0 +1,61 @@
+﻿<section id="contact" class="contact-area after-none contact-bg pb-120 p-relative fix">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 order-1">
+                <img src="/defaultimages/contact-img.png" alt="img" data-aos="fade-right" data-aos-duration="1000">
+            </div>
+            <div class="col-lg-6 col-md-12 order-2">
+                <div class="section-title p-relative pr-60 mb-30">
+                    <h2 data-aos="fade-up" data-aos-duration="1000">
+                        Bize Yazın :)
+                    </h2>
+
+
+                </div>
+
+                <div class="tab-pane fade show active" id="voverview" role="tabpanel">
+                    <div class="contact-bg">
+                        <form asp-action="SendMessage" asp-controller="Default" method="post" class="contact-form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="firstn" name="NameSurname" placeholder="Adınız Soyadınız" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <input type="text" id="email" name="Email" placeholder="Email Adresiniz" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-name mb-20">
+                                        <input type="text" id="des" name="Subject" placeholder="Mesaj Konusu" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="contact-field p-relative c-subject mb-20">
+                                        <textarea class="form-control" rows="5" name="MessageDetail" placeholder="Mesajınızı Buraya Yazabilirsiniz..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="slider-btn mt-20">
+                                        <button class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Mesajı Gönder</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</section>

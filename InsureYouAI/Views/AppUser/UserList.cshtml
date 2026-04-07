@@ -1,0 +1,52 @@
+﻿@model List<AppUser>
+
+@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">InsureYou AI Kullanıcı  Listesi</h5>
+   
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Ad Soyad</th>
+                        <th>Profil</th>
+                        <th>Durum</th>
+                        <th>Yorumlar</th>
+                     
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.Name @item.Surname</td>
+                            <td><a href="#" class="btn btn-info">Durum</a></td>
+                            <td><a href="/AppUser/UserProfileWithAI/@item.Id" class="btn btn-warning">Profil</a></td>
+                            <td><a href="/AppUser/UserCommentsProfileWithAI/@item.Id" class="btn btn-secondary">Yorumlar</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+          
+        </div>
+    </div>
+</div>
+
+

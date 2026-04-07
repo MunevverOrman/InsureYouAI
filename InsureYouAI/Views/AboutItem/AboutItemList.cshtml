@@ -1,0 +1,53 @@
+﻿@model List<AboutItem>
+@{
+    ViewData["Title"] = "AboutItemList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Hakkımızda  Bölümü Maddeler sayfası</h5>
+            <form class="ms-auto position-relative">
+                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
+                <input class="form-control ps-5" type="text" placeholder="search">
+            </form>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>               
+                        <th>İşlemler</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        count++;
+                        <tr>
+                            <td>@count</td>
+                            <td>@item.Detail</td>
+
+                            <td>
+                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                    <a href="/Default/Index/" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="/AboutItem/UpdateAboutItem/@item.AboutItemId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="/AboutItem/DeleteAboutItem/@item.AboutItemId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/AboutItem/CreateAboutItem/" class="btn btn-info">Yeni Hakkımızda Madde Girişi</a> 
+        </div>
+    </div>
+</div>

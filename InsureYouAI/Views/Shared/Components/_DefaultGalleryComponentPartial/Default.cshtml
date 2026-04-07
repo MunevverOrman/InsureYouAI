@@ -1,0 +1,22 @@
+﻿
+@model List<Gallery>
+<section class="gallery-area fix" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container-fluid">
+        <div class="row portfolio-active">
+            @foreach (var item in Model)
+            {                          
+            <div class="col-lg-4 col-md-12 mb-30">
+                <a href="projects-detail.html">
+                    <figure class="gallery-image">
+                        <img src="@item.ImageUrl" style="width:350px;height:200px;" alt="img" class="img">
+                        <figcaption>
+                            <h4>@item.Title </h4>
+                            <span>Insure You AI</span>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            }
+        </div>
+    </div>
+</section>

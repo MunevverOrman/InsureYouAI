@@ -1,0 +1,30 @@
+﻿@model List<Article>
+
+<div class="col-xl-3 col-lg-3 col-sm-6">
+    <div class="footer-widget mb-30" data-aos="fade-up" data-aos-duration="1800">
+        <div class="f-widget-title">
+            <h2>Son Yazılar</h2>
+        </div>
+        <div class="recent-blog-footer">
+            <ul>
+
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <div class="thum"> <img src="@item.CoverImageUrl" alt="img"></div>
+                        <div class="text">
+                            <a href="#">@item.Title</a>
+                            <span>@item.CreatedDate.ToString("dd-MMM-yyyy")</span>
+                        </div>
+                    </li>
+                }
+
+
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>

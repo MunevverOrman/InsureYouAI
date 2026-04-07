@@ -1,0 +1,40 @@
+﻿@model List<Slider>
+
+<section id="parallax" class="slider-area fix p-relative">
+    <div class="slider-shape ss-one layer" data-depth="0.10"><img src="/defaultimages/slider_shape01.png" alt="shape"></div>
+    <div class="slider-shape ss-two layer" data-depth="0.30"><img src="/defaultimages/slider_shape02.png" alt="shape"></div>
+    <div class="slider-shape ss-three layer" data-depth="0.40"><img src="/defaultimages/slider_shape03.png" alt="shape"></div>
+    <div class="slider-active" style="background: #fff;">
+
+        @foreach (var item in Model)
+        {
+            <div class="single-slider slider-bg d-flex align-items-center" style="background-image: url(@item.ImageUrl); background-size: cover;">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-7 col-md-7">
+                            <div class="slider-content s-slider-content mt-100">
+                                <h5 data-animation="fadeInUp" data-delay=".4s">Hoş geldiniz: <span>Insureyou AI</span> </h5>
+                                <h2 data-animation="fadeInUp" data-delay=".4s">@item.Title</h2>
+                                <p data-animation="fadeInUp" data-delay=".6s">@item.Description</p>
+
+                                <div class="slider-btn mt-30 mb-105">
+                                    <a href="#contact" class="btn ss-btn mr-15" data-animation="fadeInLeft" data-delay=".4s">Rezervasyon Oluştur </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 p-relative">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+    </div>
+
+
+</section>

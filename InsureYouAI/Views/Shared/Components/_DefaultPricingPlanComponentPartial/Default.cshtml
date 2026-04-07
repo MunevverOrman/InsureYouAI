@@ -1,0 +1,83 @@
+﻿@model List<PricingPlanItem>
+
+<section id="pricing" class="pricing-area pt-70 pb-60 fix p-relative">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="section-title center-align pr-60" data-aos="fade-up" data-aos-duration="1000">
+                    <h2>
+                        Esnek ve Uygun <br>Fiyat Planlarımız
+                    </h2>
+                    <p class="pt-30" data-aos="fade-up" data-aos-duration="1200">Her bütçeye ve ihtiyaca uygun sigorta çözümleri sunuyoruz. Sağlık, seyahat veya araç sigortası fark etmeksizin, size özel hazırlanmış paketlerle güvende olun.</p>
+                    <p data-aos="fade-up" data-aos-duration="1400">İster temel koruma arayın ister kapsamlı bir güvence; sunduğumuz esnek planlar sayesinde hayatınızı kolaylaştırın. Size en uygun planı seçin, beklenmedik risklere karşı hazırlıklı olun.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="pricing-box pricing-box2 mb-60" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="pricing-head">
+                                <h3>@ViewBag.pricingPlan1Title</h3>
+                                <div class="price-count">
+                                    <h2>@ViewBag.pricingPlan1Price ₺ <strong>/Ay</strong></h2>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div class="pricing-body mt-20 mb-30 text-left">
+                                <ul>
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.PricingPlanId == ViewBag.pricingPlan1Id)
+                                        {
+                                            <li>@item.Title</li>
+                                        }
+
+                                    }
+
+                                </ul>
+                            </div>
+
+
+                            <div class="pricing-btn">
+                                <a href="#contact" class="btn ss-btn">Teklif Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="pricing-box pricing-box2 active mb-60" data-aos="fade-left" data-aos-duration="1400">
+                            <div class="pricing-head">
+                                <h3>@ViewBag.pricingPlan2Title</h3>
+                                <div class="price-count">
+                                    <h2>@ViewBag.pricingPlan2Price ₺ <strong>/Ay</strong></h2>
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div class="pricing-body mt-20 mb-30 text-left">
+                                <ul>
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.PricingPlanId == ViewBag.pricingPlan2Id)
+                                        {
+                                            <li>@item.Title</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+
+                            <div class="pricing-btn">
+                                <a href="#contact" class="btn ss-btn">Teklif Al</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

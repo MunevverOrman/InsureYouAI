@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "CreateTestimonialWithClaudeAI";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    var testimonials = ViewBag.testimonials;
+}
+
+<div class="container-mt-5">
+    <h2>Claude AI ile Oluşturulan Müşteri Yorum ve Değerlendirme İçerikleri</h2>
+    <ul class="list-group mt-3">
+        @if (testimonials != null)
+        {
+            foreach (var item in testimonials)
+            {
+                <li class="list-group-item">@item</li>
+            }
+        }
+        else
+        {
+            <li class="list-group-item-danger">Claude'dan Veri Alınamadı: @ViewBag.services</li>
+        }
+    </ul>
+</div>
+

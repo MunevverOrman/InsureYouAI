@@ -1,0 +1,15 @@
+﻿@model List<Article>
+<section id="recent-posts-4" class="widget widget_recent_entries">
+    <h2 class="widget-title">Son Yazılar</h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="#">@item.Title</a>
+                <span class="post-date">@item.CreatedDate.ToString("dd-MMM-yyyy")</span>
+            </li>
+        }
+       
+      
+    </ul>
+</section>

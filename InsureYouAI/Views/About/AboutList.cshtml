@@ -1,0 +1,56 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Hakkımızda Sayfası Listesi</h5>
+            <form class="ms-auto position-relative">
+                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
+                <input class="form-control ps-5" type="text" placeholder="search">
+            </form>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                    
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>İşlemler</th>
+                 
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+
+                            <td>
+                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                                    <a href="/Default/Index/" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="/About/UpdateAbout/@item.AboutId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
+                                    <a href="/About/DeleteAbout/@item.AboutId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/About/CreateAbout/" class="btn btn-info @(Model.Count > 0 ? "disabled" : "")">Yeni Hakkımızda Yazısı Girişi</a> @* listede en az bir eleman varsa butonu devre dışı bırakır, yoksa aktif olur. *@
+           @*  ternary operatörü şart ? doğruysa_bu : yanlışsa_bu *@
+        </div>
+    </div>
+</div>
+

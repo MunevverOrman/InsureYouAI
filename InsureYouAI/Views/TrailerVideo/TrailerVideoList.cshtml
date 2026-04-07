@@ -1,0 +1,67 @@
+﻿@model List<TrailerVideo>
+@{
+    ViewData["Title"] = "TrailerVideoList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+    <div class="card-body">
+        <div class="d-flex align-items-center mb-3">
+            <h5 class="mb-0 fw-bold">Ana Sayfa Video Alanı</h5>
+
+            <form class="ms-auto position-relative">
+                <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                    <i class="bi bi-search"></i>
+                </div>
+                <input class="form-control ps-5 rounded-pill" type="text" placeholder="Aranacak kelimeler...">
+            </form>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Videoyu Aç Soyad</th>         
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        
+                        <tr>
+
+                            <td>@item.Title</td>
+                            <td><a href="@item.VideoUrl" class="btn btn-primary">Videoyu Aç</a></td>
+                            <td>
+                            <a href="/TrailerVideo/UpdateTrailerVideo/@item.TrailerVideoId"
+                                   class="text-warning"
+                                   data-bs-toggle="tooltip"
+                                   data-bs-placement="bottom"
+                                   title="Düzenle">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                            </td>
+                            <td>
+                            <a href="/TrailerVideo/DeleteTrailerVideo/@item.TrailerVideoId"
+                                   class="text-danger"
+                                   data-bs-toggle="tooltip"
+                                   data-bs-placement="bottom"
+                                   title="Sil">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        <a href="/TrailerVideo/CreateTrailerVideo/" class="btn btn-info">
+                Yeni Video Girişi
+            </a>
+        </div>
+    </div>
+

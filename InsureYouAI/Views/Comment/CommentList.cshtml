@@ -1,0 +1,74 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "CommentList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Sigorta Makaleleri Kullanıcı Yorumları </h5>
+            <form class="ms-auto position-relative">
+                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
+                <input class="form-control ps-5" type="text" placeholder="search">
+            </form>
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>#</th>
+                        <th> Ad Soyad</th>
+                        <th>Makale</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                      
+                        <th>Onayla</th>
+                        <th>Yorumu Kaldır</th>
+                        <th>Onay Bekliyor</th>
+                        <th>Sil</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+
+                        <tr>
+                            <td>@item.CommentId</td>
+                            <td>@item.AppUser.Name @item.AppUser.Surname</td>
+                            <td>@item.Article.Title</td>
+                            <td>@item.CommentDate.ToString("dd-MMM-yyyy")</td>
+                            <td>Durum</td>
+
+                            <td>
+                                <a href="/Default/Index/" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Onayla"><i class="bi bi-eye-fill"></i></a>
+                       
+                            </td>
+                            <td>
+                                <a href="/Category/UpdateCategory/@item.CommentId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Yorumu Kaldır"><i class="bi bi-pencil-fill"></i></a>
+                           
+                            </td>
+                            <td>
+                                <a href="/Category/UpdateCategory/@item.CommentId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Onay Bekliyor"><i class="bi bi-pencil-fill"></i></a>
+                                
+                            </td>
+                            <td>
+                                <a href="/Category/DeleteCategory/@item.CommentId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
+                               
+                            </td>
+                </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Category/CreateCategory/" class="btn btn-info">Yeni Kategori Girişi</a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "CreateSlider";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Yeni Slider Girişi</h5>
+        </div>
+        <form method="post">
+            <label>Slider Başlık</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <br />
+            <label>Açıklama</label>
+            <input type="text" asp-for="Description" class="form-control" />
+            <br />
+            <label>Görsel URL</label>
+            <input type="text" asp-for="ImageUrl" class="form-control" />
+            <br />
+          
+            <button class="btn btn-primary">Sliderı Kaydet</button>
+        </form>
+    </div>
+</div>
+
+

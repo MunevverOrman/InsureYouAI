@@ -1,0 +1,15 @@
+﻿
+<div id="comments" class="comments-area  mt-45">
+    <div id="respond" class="comment-respond">
+        <h3 id="reply-title" class="comment-reply-title">Bir Yorum Yapın <small><a rel="nofollow" id="cancel-comment-reply-link" href="/finco/?p=2112#respond" style="display:none;">Cancel reply</a></small></h3>
+        <form asp-action="AddComment" asp-controller="Blog" method="post" id="commentform" class="comment-form" novalidate="">
+            <h3>Blog Id: @ViewBag.i</h3>
+            <p class="comment-form-comment"><label for="comment">Yorumunuz</label> <textarea id="comment" name="CommentDetail" cols="45" rows="8" maxlength="65525" required="required" placeholder="Buraya yorumunuzu yazabilirsiniz."></textarea></p>
+            <p class="form-submit">
+                <input type="hidden" name="ArticleId" value="@ViewBag.i"/>
+                <input name="submit" type="submit" id="submit" class="submit" value="Yorumu Gönder"> <input>
+      </p>
+        </form>
+    </div>
+
+</div>
