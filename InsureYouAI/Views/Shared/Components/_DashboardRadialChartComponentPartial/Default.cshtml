@@ -1,71 +1,104 @@
-﻿<div class="row row-cols-1 row-cols-lg-4 radial-charts g-4">
+﻿@* _RadialCharts.cshtml *@
+<div class="row row-cols-1 row-cols-lg-4 radial-charts g-4">
     <div class="col">
         <div class="card rounded-4">
             <div class="card-body">
                 <div class="text-center">
-                    <p class="mb-1">Orders</p>
-                    <h4 class="">9,254</h4>
+                    <p class="mb-1">Poliçeler</p>
+                    <h4>@ViewBag.v1</h4>
                 </div>
-                <div class="">
-                    <div id="chart3"></div>
-                </div>
+                <div id="chart3"></div>
                 <div class="text-center">
-                    <p class="mb-1">Completed</p>
-                    <h4 class="">5632</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="text-center">
-                    <p class="mb-1">Unique Visitors</p>
-                    <h4 class="">5,2684</h4>
-                </div>
-                <div class="">
-                    <div id="chart4"></div>
-                </div>
-                <div class="text-center">
-                    <p class="mb-1">Increased since Last Week</p>
-                    <h4 class="">25%</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="text-center">
-                    <p class="mb-1">Impressions</p>
-                    <h4 class="">7,362</h4>
-                </div>
-                <div class="">
-                    <div id="chart5"></div>
-                </div>
-                <div class="text-center">
-                    <p class="mb-1">Increased since Last Week</p>
-                    <h4 class="">45%</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="text-center">
-                    <p class="mb-1">Followers</p>
-                    <h4 class="">4278K</h4>
-                </div>
-                <div class="">
-                    <div id="chart6"></div>
-                </div>
-                <div class="text-center">
-                    <p class="mb-1">Increased since Last Week</p>
-                    <h4 class="">55%</h4>
+                    <p class="mb-1">Tamamlanan Poliçeler</p>
+                    <h4>@ViewBag.r1</h4>
                 </div>
             </div>
         </div>
     </div>
 
-</div><!--end row-->
+    <div class="col">
+        <div class="card rounded-4">
+            <div class="card-body">
+                <div class="text-center">
+                    <p class="mb-1">Unique Visitors</p>
+                    <h4>5,2684</h4>
+                </div>
+                <div id="chart4"></div>
+                <div class="text-center">
+                    <p class="mb-1">Increased since Last Week</p>
+                    <h4>25%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card rounded-4">
+            <div class="card-body">
+                <div class="text-center">
+                    <p class="mb-1">Impressions</p>
+                    <h4>7,362</h4>
+                </div>
+                <div id="chart5"></div>
+                <div class="text-center">
+                    <p class="mb-1">Increased since Last Week</p>
+                    <h4>45%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card rounded-4">
+            <div class="card-body">
+                <div class="text-center">
+                    <p class="mb-1">Followers</p>
+                    <h4>4278K</h4>
+                </div>
+                <div id="chart6"></div>
+                <div class="text-center">
+                    <p class="mb-1">Increased since Last Week</p>
+                    <h4>55%</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        function createRadialChart(selector, value, color) {
+            var options = {
+                chart: {
+                    height: 180,
+                    type: "radialBar",
+                },
+                series: [value],
+                plotOptions: {
+                    radialBar: {
+                        hollow: {
+                            size: "70%",
+                        },
+                        track: {
+                            background: "#f2f2f2"
+                        },
+                        dataLabels: {
+                            show: false
+                        }
+                    }
+                },
+                colors: [color],
+            };
+
+            var chart = new ApexCharts(document.querySelector(selector), options);
+            chart.render();
+        }
+
+        // Chartları çağır
+        createRadialChart("#chart3", 50, "#20c997"); // Orders
+        createRadialChart("#chart4", 25, "#6f42c1"); // Unique Visitors
+        createRadialChart("#chart5", 45, "#d63384"); // Impressions
+        createRadialChart("#chart6", 55, "#ffc107"); // Followers
+    </script>
+}

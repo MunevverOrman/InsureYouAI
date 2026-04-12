@@ -1,0 +1,41 @@
+﻿@using InsureYouAI.Services
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-center">
+            <h5 class="mb-0">Poliçe Satış Tahminleri</h5>
+            
+        </div>
+        <div class="table-responsive mt-3">
+            <table class="table align-middle">
+                <thead class="table-secondary">
+                    <tr>                 
+                        <th>Gelecek Ay</th>
+                        <th>Tahmin</th>
+                        <th>Minimum</th>
+                        <th>Maksimum</th> 
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i <((PolicySalesForecast)ViewBag.Forecast).ForecastedValues.Length;i++)
+                    {
+                        <tr>
+                            <td>@($"Ay {i+1}")</td>
+                            <td>@(((PolicySalesForecast)ViewBag.Forecast).ForecastedValues[i])</td>
+                            <td>@(((PolicySalesForecast)ViewBag.Forecast).LowerBoundValues[i])</td>
+                            <td>@(((PolicySalesForecast)ViewBag.Forecast).UpperBoundValues[i])</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+
