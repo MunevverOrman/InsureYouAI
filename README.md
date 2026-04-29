@@ -1,9 +1,15 @@
 🛡️ InsureYouAI - Yapay Zeka Destekli Sigorta Platformu
+
+
 ASP.NET Core 9.0 | Multi-Model AI Integration | Machine Learning | Real-Time Systems
+
+
 InsureYou AI, geleneksel sigortacılık süreçlerini dünyanın en güçlü yapay zeka modelleriyle modernize eden, uçtan uca geliştirilmiş kurumsal bir backend çözümüdür. Bu proje; içerik yönetiminden veri analitiğine, sesli asistandan PDF analizine kadar 10'dan fazla farklı AI servisini .NET 9 çatısı altında birleştirir.
 
 🚀 Öne Çıkan AI Entegrasyonları & Senaryolar
+
 🧠 Akıllı Karar ve İçerik Sistemleri
+
 OpenAI (GPT-4o/o1):
 
 Admin panelinde sektörel makale ve blog içerikleri üretimi.
