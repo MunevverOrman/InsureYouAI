@@ -120,6 +120,9 @@ Tavily AI: İnternet üzerinden güncel sigortacılık verilerini tarayan akıll
 
 
 
+📸 Proje Ekran Görüntüleri
+Aşağıdaki bloğu hiçbir değişiklik yapmadan kopyalayıp GitHub'daki README.md dosyanın en altına yapıştırabilirsin. Tüm resimlerini yan yana ve açılır-kapanır şekilde düzenledim:
+
 
 
 
