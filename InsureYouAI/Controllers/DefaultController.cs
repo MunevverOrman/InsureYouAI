@@ -104,7 +104,7 @@ namespace InsureYouAI.Controllers
 
             SmtpClient client2 = new SmtpClient();
             client2.Connect("smtp.gmail.com", 587, false);
-            client2.Authenticate("munevverorman1@gmail.com", "mzfd gxeq mizl mcxf");
+            client2.Authenticate("munevverorman1@gmail.com", "");
             client2.Send(mimeMessage);
             client2.Disconnect(true);
             #endregion

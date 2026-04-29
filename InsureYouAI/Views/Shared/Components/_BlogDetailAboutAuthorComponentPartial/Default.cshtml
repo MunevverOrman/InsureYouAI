@@ -1,10 +1,10 @@
-﻿
+﻿@model AppUser
 <div class="avatar__wrap text-center mb-45">
     <div class="avatar-img">
-        <img src="img/blog/comment/avatar.png" alt="">
+        <img src="@Model.ImageURl" alt="">
     </div>
     <div class="avatar__info">
-        <h5>Münevver Orman</h5>
+        <h5>@Model.Name @Model.Surname</h5>
         <div class="avatar__info-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -15,9 +15,25 @@
     </div>
     <div class="avatar__wrap-content">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequa aute irure dolor.
+            @Model.Description
         </p>
     </div>
 </div>
+
+<style>
+    .avatar-img img {
+        width: 120px; /* Görselin boyutu */
+        height: 120px;
+        border-radius: 50%; /* Yuvarlak görünüm */
+        object-fit: cover; /* Görselin taşmasını engeller */
+        border: 3px solid #ddd; /* İnce gri çerçeve */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .avatar-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 15px auto;
+    }
+</style>

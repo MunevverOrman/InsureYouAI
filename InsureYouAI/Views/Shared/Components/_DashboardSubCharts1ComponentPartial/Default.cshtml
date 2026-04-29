@@ -1,50 +1,63 @@
-﻿
-<div class="row row-cols-1 row-cols-lg-3">
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div class="">
-                        <h4 class="mb-0">24.5K</h4>
-                        <p class="mb-0">poliçe türleri </p>
-                    </div>
-                    <div class="fs-2 text-facebook">
-                        <i class="bi bi-facebook"></i>
-                    </div>
+﻿<!-- ApexCharts kütüphanesi -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<div class="col">
+    <div class="card rounded-4">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                    <h4 class="mb-0">Poliçe Sayısı</h4>
+                    <p class="mb-0">Poliçe Türleri</p>
                 </div>
-                <div id="chart7"></div>
+                <div class="fs-2 text-primary">
+                    <i class="bi bi-shield-check"></i>
+                </div>
             </div>
+            <div id="policyDynamicChart"></div>
         </div>
     </div>
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div class="">
-                        <h4 class="mb-0">37.8K</h4>
-                        <p class="mb-0">Twitter Followers</p>
-                    </div>
-                    <div class="fs-2 text-twitter">
-                        <i class="bi bi-twitter"></i>
-                    </div>
-                </div>
-                <div id="chart8"></div>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card rounded-4">
-            <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <div class="">
-                        <h4 class="mb-0">56.9K</h4>
-                        <p class="mb-0">Youtube Subscribers</p>
-                    </div>
-                    <div class="fs-2 text-youtube">
-                        <i class="bi bi-youtube"></i>
-                    </div>
-                </div>
-                <div id="chart9"></div>
-            </div>
-        </div>
-    </div>
+</div>
+
+<script>
+    var policyData = @Html.Raw(ViewBag.policyData);
+
+    var seriesData = policyData.map(x => x.Count);
+    var labelsData = policyData.map(x => x.Name);
+
+    var options = {
+        chart: {
+            type: 'area',
+            height: 100,
+            sparkline: { enabled: true }
+        },
+        series: [{
+            PolicyType: 'Poliçe Sayısı',
+            data: seriesData
+        }],
+        stroke: {
+            curve: 'smooth',
+            width: 2
+        },
+        colors: ['#1E90FF'],
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shadeIntensity: 0.8,
+                opacityFrom: 0.4,
+                opacityTo: 0.05,
+                stops: [0, 90, 100]
+            }
+        },
+        tooltip: {
+            x: { show: false },
+            y: {
+                formatter: function(val, opts) {
+                    return labelsData[opts.dataPointIndex] + ": " + val;
+                }
+            }
+        }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#policyDynamicChart"), options);
+    chart.render();
+</script>

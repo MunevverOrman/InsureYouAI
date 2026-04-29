@@ -1,18 +1,31 @@
 ﻿<div class="posts_navigation pt-35 pb-35">
-    <div class="row align-items-center">
-        <div class="col-xl-4 col-md-5">
-            <div class="prev-link">
-                <span>Önceki Post</span>
-                <h4><a href="#">Tips Minimalist</a></h4>
+    <div class="row align-items-center text-center text-md-start">
+        <!-- Önceki Post -->
+        <div class="col-xl-4 col-md-5 mb-4 mb-md-0">
+            <div>
+                <span style="display:block;color:#8b8b8b;font-size:16px;">Önceki Post</span>
+                <h4 style="font-weight:700;font-size:24px;">
+                    <a href="#" style="text-decoration:none;color:#001f3f;">@ViewBag.PrevArticleTitle</a>
+                </h4>
             </div>
         </div>
-        <div class="col-xl-4 col-md-2 text-left text-md-center">
-            <a href="blog.html" class="blog-filter"><img src="/defaultimages/c_d01.png" alt=""></a>
+
+        <!-- Orta Görsel -->
+        <div class="col-xl-4 col-md-2 text-center">
+            <a href="blog.html" style="display:inline-flex;justify-content:center;align-items:center;">
+                <img src="/defaultimages/insurance-shield.png"
+                     alt="Sigorta"
+                     style="width:90px;height:90px;border-radius:50%;background-color:#e6f3ff;padding:15px;">
+            </a>
         </div>
+
+        <!-- Sonraki Post -->
         <div class="col-xl-4 col-md-5">
-            <div class="next-link text-left text-md-right">
-                <span>Sonraki Post</span>
-                <h4><a href="#">Less Is More</a></h4>
+            <div style="text-align:right;">
+                <span style="display:block;color:#8b8b8b;font-size:16px;">Sonraki Post</span>
+                <h4 style="font-weight:700;font-size:24px;">
+                    <a href="#" style="text-decoration:none;color:#001f3f;">@ViewBag.NextArticleTitle</a>
+                </h4>
             </div>
         </div>
     </div>

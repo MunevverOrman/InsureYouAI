@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZNYdwAPuies=",
+  "dgSpecHash": "G1hKpNTF/HM=",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO26AGUS022\\source\\repos\\InsureYouAI\\InsureYouAI\\InsureYouAI.csproj",
   "expectedPackageFiles": [
@@ -162,6 +162,7 @@
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\nuget.projectmodel\\6.12.1\\nuget.projectmodel.6.12.1.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\nuget.protocol\\6.12.1\\nuget.protocol.6.12.1.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\nuget.versioning\\6.12.1\\nuget.versioning.6.12.1.nupkg.sha512",
+    "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\pdfpig\\0.1.14\\pdfpig.0.1.14.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\system.clientmodel\\1.0.0\\system.clientmodel.1.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
@@ -206,5 +207,18 @@
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\LENOVO26AGUS022\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'MailKit' 4.15.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-9j88-vvj5-vhgr",
+      "projectPath": "C:\\Users\\LENOVO26AGUS022\\source\\repos\\InsureYouAI\\InsureYouAI\\InsureYouAI.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\LENOVO26AGUS022\\source\\repos\\InsureYouAI\\InsureYouAI\\InsureYouAI.csproj",
+      "libraryId": "MailKit",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

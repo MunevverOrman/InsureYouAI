@@ -27,7 +27,7 @@
                         <div class="blog-details-wrap">
                             @await Component.InvokeAsync("_BlogDetailContentComponentPartial", new { id = ViewBag.i })
                             @*    Eğer bu bir "Yazarın Blogları" bileşeniyse, id muhtemelen yazarın ID'sidir ve bileşen sadece o yazara ait blogları listelemek için bu ID'yi kullanır. *@
-                            
+
 
                             @await Component.InvokeAsync("_BlogDetailNextAndPrevPostComponentPartial", new { id = ViewBag.i })
 

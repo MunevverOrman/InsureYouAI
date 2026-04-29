@@ -17,6 +17,8 @@ namespace InsureYouAI.Controllers
 
         public IActionResult AboutItemList()
         {
+            ViewBag.ControllerName = "Hakkımızda Öğeleri";
+            ViewBag.PageName = "Mevcut Hakkımızda Öğeleri";
             var values = _context.AboutItems.ToList();
             return View(values);
         }
@@ -24,6 +26,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult CreateAboutItem()
         {
+            ViewBag.ControllerName = "Hakkımızda Öğeleri";
+            ViewBag.PageName = "Yeni Hakkımızda Öğe Girişi";
             return View();
         }
         [HttpPost]
@@ -37,6 +41,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult UpdateAboutItem(int id)
         {
+            ViewBag.ControllerName = "Hakkımızda Öğeleri";
+            ViewBag.PageName = " Hakkımızda Öğeleri Güncelleme ";
             var values = _context.AboutItems.Find(id);
             return View(values);
         }
@@ -59,16 +65,14 @@ namespace InsureYouAI.Controllers
         public async Task<IActionResult> CreateAboutWithGoogleGemini()
         {
             // Google AI Studio'dan alınan API anahtarı
-            var apiKey = "GeminiApiKey";
+            var apiKey = "";
             
-            // Kullanılacak Gemini model adı
+          
             var model = "gemini-2.5-flash";
 
-            // API endpoint URL'i - model adı dinamik olarak ekleniyor
             var url = $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent";
 
-            // API'ye gönderilecek istek gövdesi oluşturuluyor
-            // "contents" ve "parts" Gemini API'nin beklediği JSON yapısı
+          
             var requestBody = new
             {
                 contents = new[]
@@ -79,7 +83,7 @@ namespace InsureYouAI.Controllers
                         {
                             new
                             {
-                                // Gemini'ye gönderilen Türkçe prompt
+                               
                                 text = "Kurumsal bir sigorta firması için etkileyici, güven verici ve profesyonel bir 'Hakkımızda alanları(about item)' yazısı oluştur.Risklerinizi analiz ediyor, size en uygun poliçeyi hızla sunuyoruz. şeklinde veya bunun gibi ve buna benzer daha zengin içerikler gelsin en az 10 tane item bekliyorum"
                             }
                         }
@@ -87,33 +91,31 @@ namespace InsureYouAI.Controllers
                 }
             };
 
-            // HttpClient oluşturuluyor (using ile bellek yönetimi sağlanıyor)
+          
             using var httpClient = new HttpClient();
 
-            // API anahtarı URL parametresi yerine güvenli şekilde header'a ekleniyor
+     
             httpClient.DefaultRequestHeaders.Add("x-goog-api-key", apiKey);
 
-            // requestBody nesnesi JSON'a dönüştürülüp UTF-8 formatında içerik oluşturuluyor
+           
             var content = new StringContent(
                 JsonSerializer.Serialize(requestBody),
                 Encoding.UTF8,
                 "application/json"
             );
 
-            // API'ye POST isteği gönderiliyor ve yanıt bekleniyor
+   
             var response = await httpClient.PostAsync(url, content);
 
-            // Yanıt string olarak okunuyor
+       
             var responseJson = await response.Content.ReadAsStringAsync();
 
-            // HTTP isteği başarısız olduysa (4xx, 5xx) hata mesajı View'a gönderiliyor
             if (!response.IsSuccessStatusCode)
             {
                 ViewBag.value = $"API Hatası: {response.StatusCode} - {responseJson}";
                 return View();
             }
 
-            // Gelen JSON yanıtı parse ediliyor
             using var jsonDoc = JsonDocument.Parse(responseJson);
             var root = jsonDoc.RootElement;
 

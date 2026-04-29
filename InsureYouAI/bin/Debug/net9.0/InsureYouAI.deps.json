@@ -17,7 +17,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "9.0.13",
           "Microsoft.ML": "4.0.2",
           "Microsoft.ML.TimeSeries": "4.0.2",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.12"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.12",
+          "PdfPig": "0.1.14"
         },
         "runtime": {
           "InsureYouAI.dll": {}
@@ -2414,6 +2415,38 @@
           }
         }
       },
+      "PdfPig/0.1.14": {
+        "runtime": {
+          "lib/net8.0/UglyToad.PdfPig.Core.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Fonts.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Package.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokenization.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokens.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.dll": {
+            "assemblyVersion": "0.1.14.0",
+            "fileVersion": "0.1.14.0"
+          }
+        }
+      },
       "System.Buffers/4.6.0": {},
       "System.ClientModel/1.0.0": {
         "dependencies": {
@@ -3800,6 +3833,13 @@
       "sha512": "sha512-fJ6rFYANDnohFsdpaY79FvrJxI6murmoOxXz6nZlf819F48+IBKMnAIg3oIBRtZq5y498ObMtKnro5IitvizUg==",
       "path": "nuget.versioning/6.12.1",
       "hashPath": "nuget.versioning.6.12.1.nupkg.sha512"
+    },
+    "PdfPig/0.1.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V2Anq0Yvyn3bGGG8WCQxqEAshG0KHIehB0QOotCz14vTkEk1PR3ErPOSmbnEsyOewhdF3G5XpQHywK2L50Xu+A==",
+      "path": "pdfpig/0.1.14",
+      "hashPath": "pdfpig.0.1.14.nupkg.sha512"
     },
     "System.Buffers/4.6.0": {
       "type": "package",

@@ -1,53 +1,106 @@
 ﻿@model List<Category>
+
 @{
     ViewData["Title"] = "CategoryList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
-<div class="card">
+<div class="card shadow-sm border-0 rounded-4">
     <div class="card-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0">Sigorta Kategori Listesi</h5>
-            <form class="ms-auto position-relative">
-                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
-                <input class="form-control ps-5" type="text" placeholder="search">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-3">
+            <h4 class="fw-bold mb-0 text-primary">
+                <i class="bi bi-tags"></i> Sigorta Kategori Listesi
+            </h4>
+
+            <!-- Search -->
+            <form class="ms-auto position-relative" style="max-width:260px;">
+                <div class="position-absolute top-50 translate-middle-y px-3">
+                    <i class="bi bi-search text-secondary"></i>
+                </div>
+                <input class="form-control ps-5 rounded-pill shadow-sm"
+                       type="text"
+                       placeholder="Kategori ara...">
             </form>
         </div>
-        <div class="table-responsive mt-3">
-            <table class="table align-middle">
-                <thead class="table-secondary">
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light border-bottom">
                     <tr>
-                        <th>#</th>
-                        <th>Başlık</th>
-                        <th>İşlemler</th>
-                        <th>Güncelle</th>
-                        <th>Sil</th>
-                      
-                   
-                    
+                        <th class="text-muted">#</th>
+                        <th class="text-muted">Başlık</th>
+                        <th class="text-center text-muted">Sil</th>
+                        <th class="text-center text-muted">Güncelle</th>
+                        <th class="text-center text-muted">Sitede Gör</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        
-                    
-                    <tr>
-                        <td>@item.CategoryId</td>
-                        <td>@item.CategoryName</td>
-                    
-                        <td>
-                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                <a href="/Default/Index/" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
-                                <a href="/Category/UpdateCategory/@item.CategoryId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="/Category/DeleteCategory/@item.CategoryId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
-                            </div>
-                        </td>
-                    </tr>
+                        count++;
+                        <tr class="table-row-hover">
+                            <td>
+                                <span class="badge bg-secondary bg-opacity-75">@count</span>
+                            </td>
+
+                            <td class="fw-semibold text-dark">
+                                <i class="bi bi-folder2-open text-primary me-1"></i>
+                                @item.CategoryName
+                            </td>
+
+                            <!-- Sil -->
+                            <td class="text-center">
+                                <a href="/Category/DeleteCategory/@item.CategoryId"
+                                   class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm"
+                                   data-bs-toggle="tooltip" title="Sil">
+                                    <i class="bi bi-trash-fill me-1"></i> Sil
+                                </a>
+                            </td>
+
+                            <!-- Güncelle -->
+                            <td class="text-center">
+                                <a href="/Category/UpdateCategory/@item.CategoryId"
+                                   class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm"
+                                   data-bs-toggle="tooltip" title="Düzenle">
+                                    <i class="bi bi-pencil-square me-1"></i> Düzenle
+                                </a>
+                            </td>
+
+                            <!-- Sitede Gör -->
+                            <td class="text-center">
+                                <a href="/Blog/GetBlogByCategory/@item.CategoryId"
+                                   target="_blank"
+                                   class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm"
+                                   data-bs-toggle="tooltip" title="Sitede Gör">
+                                    <i class="bi bi-eye-fill me-1"></i> Görüntüle
+                                </a>
+                            </td>
+                        </tr>
                     }
                 </tbody>
+
             </table>
-            <a href="/Category/CreateCategory/" class="btn btn-info">Yeni Kategori Girişi</a>
         </div>
+
+        <!-- CTA -->
+        <div class="mt-4">
+            <a href="/Category/CreateCategory/"
+               class="btn btn-lg btn-primary rounded-pill shadow px-4">
+                <i class="bi bi-plus-circle me-1"></i> Yeni Kategori Ekle
+            </a>
+        </div>
+
     </div>
 </div>
+
+<style>
+    .table-row-hover:hover {
+        background-color: #f8f9fa;
+        transition: .2s;
+    }
+</style>

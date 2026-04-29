@@ -1,4 +1,97 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<UserPolicySummaryViewModel>
+
+<style>
+    .user-list-modern {
+        margin-top: 10px;
+        max-height: 420px; /* yaklaşık 5 kart yüksekliği */
+        overflow-y: auto;
+        padding-right: 6px; /* kaydırma sırasında içerik kesilmesin */
+    }
+
+        /* Kaydırma çubuğunu modern ve ince yapalım */
+        .user-list-modern::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .user-list-modern::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+
+    .user-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        margin-bottom: 12px;
+        border-radius: 16px;
+        background: #ffffff;
+        border: 1px solid #eee;
+        transition: 0.25s;
+    }
+
+        .user-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .user-card .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-card .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-card h6 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .user-card .stats {
+            font-size: 13px;
+            color: #6c757d;
+            display: flex;
+            gap: 14px;
+            margin-top: 2px;
+        }
+</style>
+
+<div class="col-12 col-lg-6 col-xl-6 d-flex">
+    <div class="card rounded-4 w-100">
+        <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+                <h6 class="mb-0">En Popüler Kullanıcılar ve Müşteriler</h6>
+            </div>
+
+            <div class="user-list-modern">
+
+                @foreach (var item in Model)
+                {
+                    <div class="user-card">
+                        <div class="left">
+                            <img src="@item.ImageUrl" class="avatar" />
+                            <div>
+                                <h6 class="mb-1">@item.FullName</h6>
+
+                                <div class="stats">
+                                    <span><i class="bi bi-shield-check"></i> @item.PolicyCount poliçe</span>
+                                    <span><i class="bi bi-wallet2"></i> @item.TotalPremium ₺</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-warning btn-sm rounded-pill">Detaylar</a>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</div>

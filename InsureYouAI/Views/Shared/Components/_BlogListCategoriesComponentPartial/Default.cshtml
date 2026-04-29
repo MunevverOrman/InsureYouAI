@@ -1,10 +1,10 @@
-﻿@model List<Category>
+﻿@model List<CategoryArticleCountViewModel>
 <section id="categories-1" class="widget widget_categories">
     <h2 class="widget-title">Kategoriler</h2>
     <ul>
        @foreach (var item in Model)
         {
-            <li class="cat-item cat-item-16"><a href="#">@item.CategoryName</a>(0)</li>
+            <li class="cat-item cat-item-16"><a href="/Blog/GetBlogByCategory/@item.CategoryId">@item.CategoryName</a>(@item.ArticleCount)</li>
             
         }
     </ul>

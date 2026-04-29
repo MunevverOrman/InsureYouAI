@@ -9,30 +9,32 @@ namespace InsureYouAI.Controllers
 {
     public class AboutController : Controller
     {
-        // Veritabanı bağlantısı için context nesnesi
+      
         private readonly InsureContext _context;
 
-        // Constructor - dependency injection ile context alınıyor
+       
         public AboutController(InsureContext context)
         {
             _context = context;
         }
 
-        // Tüm About kayıtlarını listeler
         public IActionResult AboutList()
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Mevcut Hakkımızda Yazısı";
             var values = _context.Abouts.ToList();
             return View(values);
         }
 
-        // About oluşturma sayfasını açar (GET)
         [HttpGet]
         public IActionResult CreateAbout()
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = "Yeni Hakkımızda Yazısı Girişi";
             return View();
         }
 
-        // Formdan gelen About verisini veritabanına kaydeder (POST)
+       
         [HttpPost]
         public IActionResult CreateAbout(About about)
         {
@@ -41,15 +43,15 @@ namespace InsureYouAI.Controllers
             return RedirectToAction("AboutList");
         }
 
-        // Güncellenecek About kaydını id'ye göre bulup forma gönderir (GET)
         [HttpGet]
         public IActionResult UpdateAbout(int id)
         {
+            ViewBag.ControllerName = "Hakkımızda";
+            ViewBag.PageName = " Hakkımızda Yazı Düzenlenmesi";
             var values = _context.Abouts.Find(id);
             return View(values);
         }
 
-        // Formdan gelen güncellenmiş About verisini veritabanına yazar (POST)
         [HttpPost]
         public IActionResult UpdateAbout(About About)
         {
@@ -58,7 +60,6 @@ namespace InsureYouAI.Controllers
             return RedirectToAction("AboutList");
         }
 
-        // id'ye göre About kaydını veritabanından siler
         public IActionResult DeleteAbout(int id)
         {
             var value = _context.Abouts.Find(id);
@@ -67,14 +68,14 @@ namespace InsureYouAI.Controllers
             return RedirectToAction("AboutList");
         }
 
-        // Google Gemini API kullanarak otomatik 'Hakkımızda' metni oluşturur (GET)
+        // Google Gemini API kullanarak otomatik 'Hakkımızda' metni oluşturur 
         [HttpGet]
         public async Task<IActionResult> CreateAboutWithGoogleGemini()
         {
-            // Google AI Studio'dan alınan API anahtarı
+     
             var apiKey = "";
 
-            // Kullanılacak Gemini model adı
+         
             var model = "gemini-2.5-flash";
 
             // API endpoint URL'i - model adı dinamik olarak ekleniyor

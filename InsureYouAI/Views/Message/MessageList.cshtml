@@ -4,97 +4,6 @@
     ViewData["Title"] = "MessageList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
-
-}
-
-<div class="card shadow-sm rounded-4">
-    <div class="card-body">
-        <div class="d-flex align-items-center mb-3">
-            <h5 class="mb-0 fw-bold">📥 Gelen Mesaj Listesi</h5>
-
-            <form class="ms-auto position-relative">
-                <div class="position-absolute top-50 translate-middle-y search-icon px-3">
-                    <i class="bi bi-search"></i>
-                </div>
-                <input class="form-control ps-5 rounded-pill" type="text" placeholder="Aranacak kelimeler...">
-            </form>
-        </div>
-
-        <div class="table-responsive">
-            <table class="table table-hover align-middle">
-                <thead class="table-light">
-                    <tr>
-                        <th>#</th>
-                        <th>Ad Soyad</th>
-                        <th>Konu</th>
-                        <th>Email</th>
-                        <th>Tarih</th>
-                        <th>AI Kategori</th>
-                        <th>Öncelik</th>
-                        <th>Durum</th>
-                        <th>Mesajı Aç</th>
-                        <th>Güncelle</th>
-                        <th>Sil</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        count++;
-                        <tr>
-                            <td>@count</td>
-                            <td>@item.NameSurname</td>
-                            <td>@item.Subject</td>
-                            <td>@item.Email</td>
-                            <td>@item.SendDate.ToString("dd-MMM-yyyy")</td>
-                            <td>
-                                <a href="#" class="btn btn-warning">Durum</a>
-                            </td>
-                            <td>
-                                <a href="/Default/Index/" class="text-primary"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="bottom"
-                                   title="Mesajı Aç">
-                                    <i class="bi bi-eye-fill"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="/Message/UpdateMessage/@item.MessageId"
-                                   class="text-warning"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="bottom"
-                                   title="Düzenle">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="/Message/DeleteMessage/@item.MessageId"
-                                   class="text-danger"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="bottom"
-                                   title="Sil">
-                                    <i class="bi bi-trash-fill"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-
-            <a href="/Message/CreateMessage/" class="btn btn-info">
-                Yeni Mesaj Girişi
-            </a>
-</div>
-    </div>
-    </div>
-@* 
-                                   @model List<Message>
-
-@{
-    ViewData["Title"] = "MessageList";
-    Layout = "~/Views/AdminLayout/Index.cshtml";
-    int count = 0;
 }
 
 <div class="card shadow-sm rounded-4">
@@ -226,4 +135,4 @@
             </a>
         </div>
     </div>
-</div> *@
+</div>

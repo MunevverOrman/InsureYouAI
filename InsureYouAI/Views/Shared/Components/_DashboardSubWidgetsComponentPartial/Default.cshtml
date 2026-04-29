@@ -1,4 +1,125 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿<div class="row row-cols-1 row-cols-lg-4 row-cols-xl-4">
+    <div class="col">
+        <div class="card rounded-4 bg-purple">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalCategoryCount</h4>
+                        <p class="mb-1 text-white">Toplam Kategori</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-primary">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalArticleCount</h4>
+                        <p class="mb-1 text-white">Toplam Makale</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-chat-left-text-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-orange">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalPoliciesCount</h4>
+                        <p class="mb-1 text-white">Satılan Poliçe Sayısı</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-share-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-success">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalPoliciesByThisMonthCount</h4>
+                        <p class="mb-1 text-white">Bu Ay Satılan Poliçe Sayısı</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-browser-edge"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end row-->
+
+<div class="row row-cols-1 row-cols-lg-4 row-cols-xl-4">
+    <div class="col">
+        <div class="card rounded-4 bg-pink">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalCommentCount</h4>
+                        <p class="mb-1 text-white">Toplam Yorum Sayısı</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-warning">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.TotalUserCount</h4>
+                        <p class="mb-1 text-white">Toplam Kullanıcı Sayısı</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-chat-left-text-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-secondary">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.AvgPolicyAmount.ToString("0.00") ₺</h4>
+                        <p class="mb-1 text-white">Ortalama Poliçe Tutarı / ₺</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-share-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card rounded-4 bg-info">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="">
+                        <h4 class="mb-0 text-white">@ViewBag.LastRevenueAmount ₺</h4>
+                        <p class="mb-1 text-white">Son Yapılan Poliçe Tutarı</p>
+                    </div>
+                    <div class="ms-auto fs-3 text-white">
+                        <i class="bi bi-browser-edge"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end row-->

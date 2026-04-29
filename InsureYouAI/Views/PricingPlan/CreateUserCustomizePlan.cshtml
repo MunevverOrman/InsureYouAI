@@ -1,0 +1,156 @@
+﻿@model AIInsuranceRecommendationViewModel
+
+@{
+    ViewData["Title"] = "CreateUserCustomizePlan";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<section class="pt-100 pb-100 bg-light">
+    <div class="container">
+        <div class="row">
+            <!-- Sol taraf: Başlık + Açıklama -->
+            <div class="col-lg-6 mb-4">
+                <h2 class="mb-3">Esnek ve Uygun Fiyat Planlarımız</h2>
+                <p class="mb-4">
+                    Aşağıdaki kısa formu doldurun, AI destekli sigorta asistanımız
+                    sizin için en uygun fiyat planını önersin.
+                </p>
+
+                <form asp-action="CreateUserCustomizePlan" asp-controller="PricingPlan" method="post" id="aiPlanForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Yaş</label>
+                            <input asp-for="Age" class="form-control" type="number" min="18" />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Şehir</label>
+                            <input asp-for="City" class="form-control" placeholder="İstanbul, Ankara..." />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Meslek</label>
+                            <input asp-for="Occupation" class="form-control" placeholder="Yazılım Mühendisi, Öğretmen..." />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Medeni Durum</label>
+                            <select asp-for="MaritalStatus" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option>Bekar</option>
+                                <option>Evli</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Çocuk Sayısı</label>
+                            <input asp-for="ChildrenCount" class="form-control" type="number" min="0" />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Seyahat Sıklığı</label>
+                            <select asp-for="TravelFrequency" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option>Yılda 1-2 kez</option>
+                                <option>Yılda 3-5 kez</option>
+                                <option>Sık seyahat ediyorum</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Aylık Maksimum Bütçe (TL)</label>
+                            <input asp-for="MonthlyBudget" class="form-control" type="number" step="0.01" />
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Teminat Önceliği</label>
+                            <select asp-for="CoveragePriority" class="form-select">
+                                <option value="">Seçiniz</option>
+                                <option>Sağlık</option>
+                                <option>Araç</option>
+                                <option>Seyahat</option>
+                                <option>Genel Koruma</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mb-2 form-check">
+                            <input asp-for="HasChronicDisease" class="form-check-input" type="checkbox" />
+                            <label class="form-check-label" for="HasChronicDisease">
+                                Kronik bir hastalığım var
+                            </label>
+                        </div>
+
+                        <div class="col-12 mb-4">
+                            <label class="form-label">Kronik Hastalık Detayı (opsiyonel)</label>
+                            <textarea asp-for="ChronicDiseaseDetails" class="form-control" rows="2"
+                                      placeholder="Diyabet, tansiyon vb."></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary px-4 py-2">
+                                AI ile Bana Uygun Planı Öner
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sağ taraf: Şimdilik BOŞ, AI sonucu buraya gelecek -->
+            <div class="col-lg-6">
+
+                @if (!string.IsNullOrEmpty(Model.RecommendedPackage))
+                {
+                    <!-- AI sonuç kartı -->
+                    <div class="card shadow-sm mb-4 border-0" style="border-radius: 12px;">
+                        <div class="card-body p-4">
+
+                            <h5 class="text-primary fw-bold mb-3">
+                                <i class="bi bi-stars"></i> AI Tarafından Senin İçin Önerilen Paket
+                            </h5>
+
+                            <div class="p-3 mb-3"
+                                 style="background: #f7faff; border-left: 5px solid #4a7cff; border-radius: 8px;">
+                                <h4 class="fw-bold mb-1">@Model.RecommendedPackage</h4>
+                                <span class="badge bg-primary px-3 py-2" style="font-size: 14px;">
+                                    En Uygun Eşleşme
+                                </span>
+                            </div>
+
+                            <h6 class="fw-bold mb-2">Neden Bu Paket?</h6>
+                            <p class="text-muted" style="font-size: 15px;">
+                                @Model.AnalysisText
+                            </p>
+
+                            <hr />
+
+                            <h6 class="fw-bold mb-2">Alternatif Öneri</h6>
+                            <div class="p-3"
+                                 style="background: #fff3cd; border-left: 5px solid #ffca2c; border-radius: 8px;">
+                                <h5 class="fw-bold mb-1 text-warning">@Model.SecondBestPackage</h5>
+                                <span class="badge bg-warning text-dark px-3 py-2" style="font-size: 14px;">
+                                    İkinci En Uygun Seçenek
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                  
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">AI Tavsiye Alanı</h5>
+                            <p class="text-muted mb-0">
+                                Formu doldurup gönderdiğinizde, AI destekli asistanımızın
+                                sizin için seçeceği en uygun paket ve detaylı analiz burada görünecek.
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+

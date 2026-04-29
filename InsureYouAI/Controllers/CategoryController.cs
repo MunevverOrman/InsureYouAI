@@ -15,6 +15,8 @@ namespace InsureYouAI.Controllers
 
         public IActionResult CategoryList()
         {
+            ViewBag.ControllerName = "Kategoriler";
+            ViewBag.PageName = "Kategori Listesi";
             var values = _context.Categories.ToList();
             return View(values);
         }

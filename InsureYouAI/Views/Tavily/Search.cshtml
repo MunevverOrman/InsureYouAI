@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+
+    <!-- Başlık -->
+    <h2 class="mb-4" style="font-weight:600;">
+        🌐 Tavily AI Web Tarama & Özetleme Asistanı
+    </h2>
+
+    <!-- Arama Formu -->
+    <form method="post" asp-action="SearchWithTavily">
+        <div class="input-group mb-4">
+            <input type="text" name="query" class="form-control form-control-lg"
+                   placeholder="Örneğin: 2025 trafik sigortası zam oranı nedir?"
+                   value="@ViewBag.Query" required />
+
+            <button class="btn btn-primary btn-lg" type="submit">
+                <i class="bx bx-search-alt-2"></i> Ara
+            </button>
+        </div>
+    </form>
+
+    @if (ViewBag.OpenAIResult != null)
+    {
+        <!-- OpenAI Özeti -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bx bx-bot"></i> AI Özet Sonucu</h5>
+            </div>
+            <div class="card-body" style="font-size: 1.1rem;">
+                <p>@ViewBag.OpenAIResult</p>
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.TavilyRaw != null)
+    {
+        <!-- Tavily Raw JSON -->
+        <div class="card shadow-sm mb-5">
+            <div class="card-header d-flex justify-content-between align-items-center"
+                 style="cursor:pointer;"
+                 data-bs-toggle="collapse"
+                 data-bs-target="#rawJson">
+                <h5 class="mb-0"><i class="bx bx-code-alt"></i> Tavily Ham Veri (JSON)</h5>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+
+            <div id="rawJson" class="collapse">
+                <div class="card-body">
+                    <pre style="background:#1e1e1e; color:#dcdcdc; padding:15px; border-radius:10px; white-space: pre-wrap;">
+            @ViewBag.TavilyRaw
+                                </pre>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+<!-- Özel Stiller -->
+<style>
+    .card {
+        border-radius: 12px;
+    }
+
+    .card-header {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    pre {
+        max-height: 450px;
+        overflow-y: auto;
+    }
+
+    .input-group input {
+        border-radius: 10px 0 0 10px !important;
+    }
+
+    .input-group .btn {
+        border-radius: 0 10px 10px 0 !important;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+</style>

@@ -108,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xHZXRCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Blog/GetBlogByCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xHZXRCbG9nQnlDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Category/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -156,6 +160,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxTdWJzY3JpYmVFbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/ElevenLabsAI/SpeakInsuranceAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVuTGFic0FJXFNwZWFrSW5zdXJhbmNlQW5zd2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/ElevenLabsAI/SpeakInsuranceAnswer2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVuTGFic0FJXFNwZWFrSW5zdXJhbmNlQW5zd2VyMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/ElevenLabsAI/SpeakInsuranceAnswer3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxldmVuTGFic0FJXFNwZWFrSW5zdXJhbmNlQW5zd2VyMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Error/Page404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcUGFnZTQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Forecast/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9yZWNhc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -184,8 +204,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxVcGRhdGVNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/PolicyAnalysisWithClaude/PdfAnalyze.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWN5QW5hbHlzaXNXaXRoQ2xhdWRlXFBkZkFuYWx5emUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/PricingPlan/CreatePricingPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpY2luZ1BsYW5cQ3JlYXRlUHJpY2luZ1BsYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/PricingPlan/CreateUserCustomizePlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJpY2luZ1BsYW5cQ3JlYXRlVXNlckN1c3RvbWl6ZVBsYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/PricingPlan/PricingPlanList.cshtml]
@@ -332,6 +360,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFN1YkNoYXJ0czNDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Shared/Components/_DashboardSubChartsComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFN1YkNoYXJ0c0NvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Shared/Components/_DashboardSubWidgetsComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Rhc2hib2FyZFN1YldpZGdldHNDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -434,6 +466,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Slider/UpdateSlider.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVyXFVwZGF0ZVNsaWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Tavily/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF2aWx5XFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/LENOVO26AGUS022/source/repos/InsureYouAI/InsureYouAI/Views/Testimonial/CreateTestimonial.cshtml]

@@ -1,3 +1,7 @@
+wwwroot\aitalk.gif
+wwwroot\colorlib-error-404-7\css\style.css
+wwwroot\colorlib-error-404-7\index.html
+wwwroot\colorlib-error-404-7\readme.txt
 wwwroot\css\site.css
 wwwroot\defaultimages\00.png
 wwwroot\defaultimages\01.jpg
@@ -365,6 +369,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\policypdf\Test.pdf
 wwwroot\snacked\ltr\app-chat-box.html
 wwwroot\snacked\ltr\app-emailbox.html
 wwwroot\snacked\ltr\app-emailread.html
@@ -2037,6 +2042,10 @@ wwwroot\snacked\rtl\table-advance-tables.html
 wwwroot\snacked\rtl\table-basic-table.html
 wwwroot\snacked\rtl\table-datatable.html
 wwwroot\snacked\rtl\widgets.html
+wwwroot\voices\eleven_bdf80289-339c-48ef-b6cf-97c11538b63c.mp3
+wwwroot\voices\eleven_c35b1ef2-148d-4136-89fb-0d2e7bba6b19.mp3
+wwwroot\voices\eleven_f53b5512-7d72-4bcf-bc19-a5495ae73558.mp3
+wwwroot\voices\voice_e276aaaa-7141-4ffc-bb89-f5368089884f.mp3
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\css\site.css
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\favicon.ico
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\insureyou\about.html
@@ -3616,3 +3625,6 @@ C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\snacked\rt
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\snacked\rtl\assets\flags\4x3\tf.svg
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\snacked\rtl\assets\flags\4x3\td.svg
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\snacked\rtl\assets\flags\4x3\tc.svg
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\colorlib-error-404-7\css\style.css
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\colorlib-error-404-7\index.html
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\wwwroot\colorlib-error-404-7\readme.txt

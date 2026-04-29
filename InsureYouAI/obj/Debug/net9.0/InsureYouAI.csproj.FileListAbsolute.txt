@@ -1905,3 +1905,13 @@ C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\r
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\runtimes\win-x86\native\MklImports.dll
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\runtimes\win-x86\native\MklProxyNative.dll
 C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\runtimes\win-x86\native\libiomp5md.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\obj\Debug\net9.0\compressed\y73sr8a4hi-46ivnnk30l.gz
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\obj\Debug\net9.0\compressed\c1n9ep40p3-bon9ngzove.gz
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\obj\Debug\net9.0\compressed\c0b7dhfd83-oapm0uvoo5.gz
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.Core.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.DocumentLayoutAnalysis.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.Fonts.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.Package.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.Tokenization.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.Tokens.dll
+C:\Users\LENOVO26AGUS022\source\repos\InsureYouAI\InsureYouAI\bin\Debug\net9.0\UglyToad.PdfPig.dll

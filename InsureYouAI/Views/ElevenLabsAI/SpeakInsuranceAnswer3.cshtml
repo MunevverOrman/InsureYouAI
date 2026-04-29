@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "SpeakInsuranceAnswer3";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<style>
+    body {
+        background: #f5f7fa;
+    }
+
+    .chat-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    }
+
+    .message {
+        margin: 16px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .user-msg {
+        justify-content: flex-end;
+    }
+
+    .msg-bubble {
+        background: #e8f0fe;
+        padding: 14px 18px;
+        border-radius: 14px;
+        max-width: 80%;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .user-msg .msg-bubble {
+        background: #d1ffd6;
+    }
+
+    .assistant-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    /* Konuşma animasyonu gif'i */
+    #talkingAvatar {
+        width: 90px;
+        margin: 10px auto;
+        display: none;
+    }
+
+    .typing {
+        margin: 8px 0;
+        padding-left: 60px;
+        font-size: 14px;
+        color: #777;
+    }
+</style>
+
+<div class="chat-container">
+
+    <!-- MESAJ ALANI -->
+    <div id="chatArea">
+        <div class="message assistant-msg">
+            <div class="assistant-avatar">🤖</div>
+            <div class="msg-bubble">Merhaba! Ben InsureYOU AI. Size nasıl yardımcı olabilirim?</div>
+        </div>
+    </div>
+
+    <!-- KONUŞAN AI AVATAR -->
+    <div style="text-align:center;">
+        <img id="talkingAvatar" src="/aitalk.gif" />
+    </div>
+
+    <!-- FORM -->
+    <form method="post" id="askForm">
+        <textarea name="text" id="text" class="form-control" rows="3" placeholder="Sorunuzu yazın..."></textarea>
+        <button type="submit" class="btn btn-primary mt-3 w-100">Gönder</button>
+    </form>
+
+    <!-- Ses için -->
+    <audio id="voiceAudio"></audio>
+</div>
+
+<script>
+    var chatArea = document.getElementById("chatArea");
+    var audio = document.getElementById("voiceAudio");
+    var avatar = document.getElementById("talkingAvatar");
+
+    // FORM GÖNDERİLDİĞİNDE
+    document.getElementById("askForm").addEventListener("submit", function () {
+        const text = document.getElementById("text").value.trim();
+        if (!text) return;
+
+        // Kullanıcı mesajını ekle
+        chatArea.innerHTML += `
+            <div class="message user-msg">
+                <div class="msg-bubble">${text}</div>
+            </div>
+        `;
+
+        // "Yazıyor..." animasyonu çıkar
+        chatArea.innerHTML += `
+            <div id="typingIndicator" class="typing">InsureYOU AI yazıyor...</div>
+        `;
+    });
+
+</script>
+
+<!-- BACKEND'DEN GELEN CEVAP VARSA OTOMATİK İŞLET -->
+@if (ViewBag.AudioUrl != null && ViewBag.Answer != null)
+{
+    <script>
+        // Typing indicator kaldır
+        var typing = document.getElementById("typingIndicator");
+        if (typing) typing.remove();
+
+        // Asistan mesajını ekle
+        chatArea.innerHTML += `
+            <div class="message assistant-msg">
+                <div class="assistant-avatar">🤖</div>
+                <div class="msg-bubble">@Html.Raw(ViewBag.Answer)</div>
+            </div>
+        `;
+
+        // SES AYARI
+        audio.src = "@ViewBag.AudioUrl";
+
+        // Eski sesi anında durdur
+        audio.pause();
+        audio.currentTime = 0;
+
+        // Avatar konuşma modu aktif
+        avatar.style.display = "block";
+
+        // SES OTOMATİK OYNAT
+        audio.play().catch(err => {
+            console.log("Tarayıcı engelledi, kullanıcı etkileşimi gerektiriyor.");
+        });
+
+        // Ses bitince avatar dursun
+        audio.onended = function () {
+            avatar.style.display = "none";
+        };
+    </script>
+}
+
+

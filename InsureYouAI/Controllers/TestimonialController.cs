@@ -55,32 +55,24 @@ namespace InsureYouAI.Controllers
         }
 
         // Anthropic Claude API'sini kullanarak sigorta şirketi için müşteri yorumları (testimonial) oluşturan action metodu
-        // Async yapı kullanılıyor çünkü HTTP isteği bekletme (await) gerektiriyor
+      
         public async Task<IActionResult> CreateTestimonialWithClaudeAI()
         {
-            // Claude API'ye erişim için gerekli kimlik doğrulama anahtarı
-            // GÜVENLİK NOTU: Production ortamında bu key buraya yazılmamalı!
-            // appsettings.json veya environment variable içinde saklanmalı
+            
             string apiKey = "";
 
-            // Claude'a gönderilecek Türkçe prompt (istek metni)       
+                 
             string prompt = "Bir sigorta şirketi için müşteri deneyimlerine dair yorum oluşturmak istiyorum " +
                             "yani ingilizce karşılığı ile:Testimonial. Bu alanda Türkçe olarak 6 tane yorum, " +
                             "6 tane müşteri adı ve soyadı, bu müşterilerin unvanı olsun. Buna göre içeriği hazırla.";
 
-            // HttpClient: Anthropic API'sine HTTP isteği atmak için kullanılıyor
-            // "using" ifadesi: işlem bitince belleği otomatik temizliyor (IDisposable pattern)
+            
             using var client = new HttpClient();
 
-            // Tüm istekler bu base adres üzerinden gidecek
-            // Endpoint'leri sonradan kısaca yazabilmek için base adres belirliyoruz
             client.BaseAddress = new Uri("https://api.anthropic.com/");
 
-            // Anthropic'in kimlik doğrulama yöntemi: API key header'a ekleniyor
-            // Bearer token yerine Anthropic'e özgü "x-api-key" header'ı kullanılıyor
             client.DefaultRequestHeaders.Add("x-api-key", apiKey);
-
-            // Anthropic API'nin hangi versiyonunu kullandığımızı belirtiyoruz          
+         
             client.DefaultRequestHeaders.Add("anthropic-version", "2023-06-01");
 
             // Sunucuya "JSON formatında veri kabul ediyorum" diyoruz
@@ -88,16 +80,13 @@ namespace InsureYouAI.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // API'ye gönderilecek istek gövdesi (request body) oluşturuluyor
-            // Anonim tip (anonymous type) kullanıldı çünkü sadece bu istekte kullanılacak
             var requestBody = new
             {
-                // Kullanılacak Claude modeli 
                 model = "claude-opus-4-5",
 
-                // Üretilecek maksimum token sayısı 
                 max_tokens = 512,
 
-                // Yaratıcılık seviyesi: 0 (deterministik) ile 1 (çok yaratıcı) arası
+               // Yaratıcılık seviyesi: 0 (deterministik) ile 1 (çok yaratıcı) arası
                 // 0.5: Tutarlı ama biraz çeşitli cevaplar üretir; yorumlar için ideal denge
                 temperature = 0.5,
 

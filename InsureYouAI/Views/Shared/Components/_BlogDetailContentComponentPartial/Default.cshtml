@@ -5,12 +5,14 @@
     </h2>
     <div class="meta-info">
         <ul>
-            <li><i class="fal fa-person-carry"></i> Yazar: </li>
-            <li><i class="fal fa-comments"></i> 0 Yorum </li>
-            <li><i class="fal fa-car"></i> Kategori </li>
-            <li><i class="fal fa-calendar-alt"></i> 24th March 2019</li>
+            <li><i class="fa fa-person-carry"></i> Yazar: @Model.AppUser.Name @Model.AppUser.Surname</li>
+            <li><i class="fal fa-comments"></i> @ViewBag.CommentCount Yorum </li>
+            <li><i class="fal fa-car"></i> Kategori: @Model.Category.CategoryName </li>
+            <li>
+                <i class="fal fa-calendar-alt"></i> @Model.CreatedDate.ToString("dd-MMM-yyyy")
+            </li>
         </ul>
     </div>
-    <p>@Model.Content</p>
+    <p>@Html.Raw(Model.Content)</p>
    
 </div>

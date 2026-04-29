@@ -1,53 +1,140 @@
 ﻿@model List<AboutItem>
+
 @{
     ViewData["Title"] = "AboutItemList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
+
+    bool canAddNewItem = Model == null || Model.Count < 3;
 }
 
-<div class="card">
+<div class="card shadow-sm border-0 rounded-4">
     <div class="card-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0">Hakkımızda  Bölümü Maddeler sayfası</h5>
-            <form class="ms-auto position-relative">
-                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
-                <input class="form-control ps-5" type="text" placeholder="search">
+
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-3">
+            <h4 class="fw-bold mb-0 text-primary">
+                <i class="bi bi-list-check"></i> Hakkımızda Bölümü Maddeleri
+            </h4>
+
+            <!-- Search -->
+            <form class="ms-auto position-relative" style="max-width:260px;">
+                <div class="position-absolute top-50 translate-middle-y px-3">
+                    <i class="bi bi-search text-secondary"></i>
+                </div>
+                <input class="form-control ps-5 rounded-pill shadow-sm"
+                       type="text"
+                       placeholder="Madde ara...">
             </form>
         </div>
-        <div class="table-responsive mt-3">
-            <table class="table align-middle">
-                <thead class="table-secondary">
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light border-bottom">
                     <tr>
-                        <th>#</th>
-                        <th>Başlık</th>               
-                        <th>İşlemler</th>
-
-
-
-
+                        <th class="text-muted">#</th>
+                        <th class="text-muted">Madde İçeriği</th>
+                        <th class="text-center text-muted">İşlemler</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @foreach (var item in Model)
                     {
-
                         count++;
-                        <tr>
-                            <td>@count</td>
-                            <td>@item.Detail</td>
+                        <tr class="table-row-hover">
 
+                            <!-- Index -->
                             <td>
-                                <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                    <a href="/Default/Index/" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sitede Gör"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="/AboutItem/UpdateAboutItem/@item.AboutItemId" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Düzenle"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="/AboutItem/DeleteAboutItem/@item.AboutItemId" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sil"><i class="bi bi-trash-fill"></i></a>
+                                <span class="badge bg-secondary bg-opacity-75">@count</span>
+                            </td>
+
+                            <!-- Detail -->
+                            <td class="fw-semibold text-dark">
+                                <i class="bi bi-dot text-primary me-1"></i>
+                                @item.Detail
+                            </td>
+
+                            <!-- Actions -->
+                            <td class="text-center">
+                                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                                    <a href="/Default/Index/"
+                                       target="_blank"
+                                       class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">
+                                        <i class="bi bi-eye-fill me-1"></i> Gör
+                                    </a>
+
+                                    <a href="/AboutItem/UpdateAboutItem/@item.AboutItemId"
+                                       class="btn btn-sm btn-outline-warning rounded-pill px-3 shadow-sm">
+                                        <i class="bi bi-pencil-square me-1"></i> Düzenle
+                                    </a>
+
+                                    <a href="/AboutItem/DeleteAboutItem/@item.AboutItemId"
+                                       class="btn btn-sm btn-outline-danger rounded-pill px-3 shadow-sm">
+                                        <i class="bi bi-trash-fill me-1"></i> Sil
+                                    </a>
+
                                 </div>
                             </td>
+
                         </tr>
                     }
                 </tbody>
             </table>
-            <a href="/AboutItem/CreateAboutItem/" class="btn btn-info">Yeni Hakkımızda Madde Girişi</a> 
         </div>
+
+        <!-- CTA + Rule Info -->
+        <div class="mt-4">
+
+            @if (canAddNewItem)
+            {
+                <!-- Aktif -->
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="/AboutItem/CreateAboutItem/"
+                       class="btn btn-lg btn-primary rounded-pill shadow px-4">
+                        <i class="bi bi-plus-circle me-1"></i> Yeni Madde Ekle
+                    </a>
+
+                    <a href="/AboutItem/CreateAboutItemWithGoogleGemini/"
+                       class="btn btn-lg btn-outline-info rounded-pill shadow px-4">
+                        <i class="bi bi-stars me-1"></i> Gemini ile Öğe Oluştur
+                    </a>
+                </div>
+            }
+            else
+            {
+                <!-- Pasif -->
+                <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-lg btn-secondary rounded-pill px-4" disabled>
+                        <i class="bi bi-lock-fill me-1"></i> Yeni Madde Ekle
+                    </button>
+
+                    <button class="btn btn-lg btn-secondary rounded-pill px-4" disabled>
+                        <i class="bi bi-lock-fill me-1"></i> Gemini ile Öğe Oluştur
+                    </button>
+                </div>
+
+                <!-- Info -->
+                <div class="alert alert-warning mt-3 d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+                    <div>
+                        <strong>Limit Bilgisi:</strong><br />
+                        Hakkımızda bölümünde en fazla <b>4 madde</b> tanımlanabilir.
+                        Yeni madde eklemek için mevcut maddelerden birini silmeniz gerekir.
+                    </div>
+                </div>
+            }
+
+        </div>
+
     </div>
 </div>
+
+<style>
+    .table-row-hover:hover {
+        background-color: #f8f9fa;
+        transition: .2s;
+    }
+</style>

@@ -1,70 +1,124 @@
 ﻿@model List<PricingPlan>
+
 @{
     ViewData["Title"] = "PricingPlanList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-<div class="card">
-    <div class="card-body">
-        <div class="d-flex align-items-center">
-            <h5 class="mb-0">Ödeme Planları Listesi</h5>
-            <form class="ms-auto position-relative">
-                <div class="position-absolute top-50 translate-middle-y search-icon px-3"><i class="bi bi-search"></i></div>
-                <input class="form-control ps-5" type="text" placeholder="Aranacak kelimeler..">
-            </form>
+<div class="card shadow-sm" style="border-radius: 14px;">
+    <div class="card-body p-4">
+
+        <!-- Üst Header -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div>
+                <h3 class="fw-bold mb-1">Ödeme Planları</h3>
+                <p class="text-muted mb-0" style="font-size: 14px;">Sistemde tanımlı tüm fiyat planları</p>
+            </div>
+
+            <!-- Arama Kutusu -->
+            <div class="position-relative" style="width: 260px;">
+                <i class="bi bi-search position-absolute top-50 translate-middle-y ms-2 text-muted"></i>
+                <input class="form-control ps-5 py-2" type="text" placeholder="Aranacak kelime..." />
+            </div>
         </div>
-        <div class="table-responsive mt-3">
-            <table class="table align-middle">
-                <thead class="table-secondary">
-                    <tr>
-                        <th>#</th>
-                        <th>Başlık</th>
-                        <th>Fiyat</th>
-                        <th>Durum</th>
-                        <th>Güncelle</th>
-                        <th>Sil</th>
 
-
-
+        <!-- Tablo -->
+        <div class="table-responsive">
+            <table class="table align-middle table-hover">
+                <thead>
+                    <tr class="bg-light">
+                        <th class="text-muted">#</th>
+                        <th class="text-muted">Başlık</th>
+                        <th class="text-muted">Fiyat</th>
+                        <th class="text-muted">Durum</th>
+                        <th class="text-muted">Aktif/Pasif</th>
+                        <th class="text-muted">Güncelle</th>
+                        <th class="text-muted">Sil</th>
                     </tr>
                 </thead>
+
                 <tbody>
+
                     @foreach (var item in Model)
                     {
                         count++;
 
-                        <tr><td>@count</td><td>@item.Title</td>
-                            <td>@item.Price</td>
-                            <td>@item.IsFeature</td>
+                        string badgeClass = item.IsFeature
+                        ? "badge bg-success"
+                        : "badge bg-danger";
+
+                        string badgeText = item.IsFeature
+                        ? "Aktif"
+                        : "Pasif";
+
+                        <tr style="transition: 0.2s;">
+                            <td class="fw-bold">@count</td>
+
+                            <td class="fw-semibold">@item.Title</td>
+
+                            <td class="fw-semibold">
+                                @item.Price.ToString("N2") ₺
+                            </td>
 
                             <td>
-                                <a href="#" class="btn btn-warning">Durum</a>
-                            </td>                            
+                                <span class="@badgeClass px-3 py-2" style="font-size: 13px;">
+                                    @badgeText
+                                </span>
+                            </td>
+
                             <td>
-                                <a href="/Message/UpdateMessage/@item.PricingPlanId"
-                                   class="text-warning"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="bottom"
-                                   title="Düzenle">
+                                <a href="/PricingPlan/ChangeStatus/@item.PricingPlanId"
+                                   class="btn btn-outline-primary btn-sm px-3"
+                                   style="border-radius: 8px;">
+                                    <i class="bi bi-toggles"></i> Durum
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="/PricingPlan/UpdatePricingPlan/@item.PricingPlanId"
+                                   class="btn btn-outline-warning btn-sm px-3"
+                                   style="border-radius: 8px;">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
                             </td>
+
                             <td>
-                                <a href="/Message/DeleteMessage/@item.PricingPlanId"
-                                   class="text-danger"
-                                   data-bs-toggle="tooltip"
-                                   data-bs-placement="bottom"
-                                   title="Sil">
+                                <a href="/PricingPlan/DeletePricingPlan/@item.PricingPlanId"
+                                   class="btn btn-outline-danger btn-sm px-3"
+                                   style="border-radius: 8px;">
                                     <i class="bi bi-trash-fill"></i>
                                 </a>
                             </td>
                         </tr>
                     }
+
                 </tbody>
             </table>
-            <a href="/PricingPlan/CreatePricingPlan/" class="btn btn-info">Yeni Fiyat Plan Girişi</a>
         </div>
+
+        <!-- Alt Butonlar -->
+        <div class="d-flex gap-3 mt-4">
+            <a href="/PricingPlan/CreatePricingPlan/"
+               class="btn btn-primary px-4 py-2 fw-bold"
+               style="border-radius: 10px;">
+                <i class="bi bi-plus-circle me-1"></i> Yeni Fiyat Planı Girişi
+            </a>
+
+            <a href="/PricingPlan/CreateUserCustomizePlan/"
+               class="btn btn-info px-4 py-2 fw-bold text-white"
+               style="border-radius: 10px;">
+                <i class="bi bi-stars me-1"></i> AI Destekli Sigorta Plan Önerisi
+            </a>
+        </div>
+
     </div>
 </div>
 
+<style>
+    /* Hover efekti */
+    table tbody tr:hover {
+        background-color: #f9fbff !important;
+        transform: scale(1.002);
+    }
+</style>

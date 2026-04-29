@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "SpeakInsuranceAnswer2";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h2 class="mb-4">InsureYOU AI – Metni Sese Dönüştür</h2>
+
+<!-- FORM -->
+<form method="post">
+    <label for="text" class="form-label fw-bold">Metin Girin</label>
+    <textarea name="text" id="text" class="form-control" rows="4" placeholder="Merhaba, bugün size nasıl yardımcı olabilirim?"></textarea>
+
+    <button type="submit" class="btn btn-success mt-3">🎧 Sesi Oluştur</button>
+</form>
+
+<hr />
+
+<!-- Eğer ses üretildiyse avatar + oynatma kontrolü -->
+@if (ViewBag.AudioUrl != null)
+{
+    <div style="text-align:center; margin-top:30px;">
+
+        <!-- AI Avatar (GIF) -->
+        <img id="aiAvatar"
+             src="/aitalk.gif"
+             style="width:180px; display:none; margin:auto;" />
+
+        <!-- Play Button -->
+        <button id="playBtn" class="btn btn-primary mt-3">
+            ▶ Oynat
+        </button>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="voiceAudio">
+        <source src="@ViewBag.AudioUrl" type="audio/mpeg" />
+    </audio>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}
+
+<script>
+    // Sayfada ses ve buton varsa JS çalışsın
+    var audio = document.getElementById("voiceAudio");
+    var btn = document.getElementById("playBtn");
+    var avatar = document.getElementById("aiAvatar");
+
+    if (audio && btn && avatar) {
+        btn.addEventListener("click", function () {
+
+            if (audio.paused) {
+                audio.play();
+                avatar.style.display = "block";
+                btn.textContent = "⏸ Durdur";
+            } else {
+                audio.pause();
+                avatar.style.display = "none";
+                btn.textContent = "▶ Oynat";
+            }
+        });
+
+        audio.onended = function () {
+            avatar.style.display = "none";
+            btn.textContent = "▶ Oynat";
+        };
+    }
+</script>
+

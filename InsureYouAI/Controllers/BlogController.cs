@@ -1,6 +1,7 @@
 ﻿using InsureYouAI.Context;
 using InsureYouAI.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
@@ -21,6 +22,14 @@ namespace InsureYouAI.Controllers
         {
             return View();
         }
+
+        //kategoriye göre blog getirme
+        public IActionResult GetBlogByCategory(int id)
+        {      
+            ViewBag.c = id;
+            return View();
+        }
+
 
         public IActionResult BlogDetail(int id)
         {
