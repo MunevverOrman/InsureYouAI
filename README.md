@@ -45,7 +45,7 @@ Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerin
 
 
 
-📸 Ekran Görüntüleri
+
 
 ## 📊 Ekran Görüntüleri
 
