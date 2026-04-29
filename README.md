@@ -54,16 +54,37 @@ Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerin
 
 <br>
 
-<img src="https://github.com/user-attachments/assets/3b5ee81e-80f1-438c-8df0-f44fc5f81e02" />
-<img src="https://github.com/user-attachments/assets/43af8223-e479-4f4a-9d92-276983b199e3" />
-<img src="https://github.com/user-attachments/assets/25613893-639b-4b49-bd94-cff24323774f" />
-<img src="https://github.com/user-attachments/assets/fafda9af-5e99-4375-9abb-ed88adfcea31" />
-<img src="https://github.com/user-attachments/assets/ea897438-d879-4e11-ae93-0f611e89f7e2" />
-<img src="https://github.com/user-attachments/assets/37c9f2be-54d0-4d7a-9fb2-f034f18603b6" />
-<img src="https://github.com/user-attachments/assets/3e45a9fe-bbfc-4ad5-9ec8-c15561acdad7" />
-<img src="https://github.com/user-attachments/assets/5672aabc-7ad5-42a4-882b-34e476dcf0e9" />
-<img src="https://github.com/user-attachments/assets/90aa560b-4ae1-48de-bbca-a9530c8d92d9" />
-<img src="https://github.com/user-attachments/assets/237445de-6d8a-472f-bbdf-9b19fab9a182" />
+<img width="1902" height="917" alt="default" src="https://github.com/user-attachments/assets/716f519f-5f8f-4426-8d89-56adeb04c142" />
+
+<br>
+<img width="1900" height="872" alt="default2" src="https://github.com/user-attachments/assets/bcccecc9-cfad-4868-9734-a0cae0623ef1" />
+<br>
+<img width="1902" height="907" alt="default3" src="https://github.com/user-attachments/assets/6add64d3-df2c-478e-924b-0335731dc80a" />
+<br>
+<img width="1897" height="878" alt="default4" src="https://github.com/user-attachments/assets/358f3d01-c85d-4f3b-8b82-39f66132510e" />
+<br>
+<img width="1892" height="831" alt="default5" src="https://github.com/user-attachments/assets/d0bcac1c-940e-4a42-b50d-5e80d063c392" />
+<br>
+<img width="1885" height="821" alt="default6" src="https://github.com/user-attachments/assets/e2fa1440-cc70-4df6-81c3-7fa85e09a336" />
+<br>
+<img width="1897" height="891" alt="deault7" src="https://github.com/user-attachments/assets/0fb0eae6-8bd8-442d-b397-5b89386e6e82" />
+<br>
+<img width="1892" height="847" alt="default8" src="https://github.com/user-attachments/assets/226c1f09-264d-4749-86b0-91ccbe66b727" />
+<br>
+<img width="1891" height="880" alt="default9" src="https://github.com/user-attachments/assets/3fa97bee-db70-48ac-bdec-d986f4c1320b" />
+
+<br>
+<img width="1870" height="897" alt="default10" src="https://github.com/user-attachments/assets/833cf91e-35c2-49d2-97f1-b5b392f8f66c" />
+
+
+
+
+
+
+
+
+
+
 
 </details>
 
