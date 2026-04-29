@@ -91,7 +91,7 @@ Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerin
 <img src="https://github.com/user-attachments/assets/4f2382b1-80e4-49f6-993d-b9b523555e29" />
 <img width="1901" height="797" alt="1" src="https://github.com/user-attachments/assets/0b88ccb8-b0ae-4190-bfeb-0d92ec40bf79" />
 <img width="1878" height="912" alt="1 2" src="https://github.com/user-attachments/assets/58d2b0b0-f10c-44fd-9e81-1e9228a89e53" />
-<img width="1900" height="881" alt="1 3" src="https://github.com/user-attachments/assets/6359190b-c5e5-45f6-9305-f51380c7957e" />
+
 
 
 
