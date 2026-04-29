@@ -39,7 +39,11 @@ SignalR AI Chat: Yapay zeka ile anlık ve akışkan (streaming) mesajlaşma alty
 
 Tavily AI: İnternet üzerinden güncel sigortacılık verilerini tarayan akıllı araştırma botu.
 
-<img width="876" height="520" alt="image" src="https://github.com/user-attachments/assets/6a9a42a3-de2a-4d72-ab60-78edd01bd4a8" />
+
+<img width="906" height="441" alt="image" src="https://github.com/user-attachments/assets/9c65110c-efad-491d-aaf8-04b7f1733cb7" />
+
+
+
 
 📸 Ekran Görüntüleri
 
