@@ -96,21 +96,37 @@ Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerin
 <br>
 
 <img src="https://github.com/user-attachments/assets/948b1975-cf57-4be6-956a-79d795430c87" />
+<br>
 <img src="https://github.com/user-attachments/assets/d5ed6c8a-e419-433a-9cc6-b3c0a028d96d" />
+<br>
 <img src="https://github.com/user-attachments/assets/8ec7caae-e119-4227-b488-c4eb6b9a253e" />
+<br>
 <img src="https://github.com/user-attachments/assets/be3ed8fa-1eaa-4545-b39c-b0862b89dae2" />
+<br>
 <img src="https://github.com/user-attachments/assets/2858613a-05c5-4a76-8934-6f15cef16802" />
+<br>
 <img src="https://github.com/user-attachments/assets/c2ef1983-5659-4351-bbd8-4f3182bb85e4" />
+<br>
 <img src="https://github.com/user-attachments/assets/4b125c55-81ab-4d37-8e7d-90d8dd965443" />
+<br>
 <img src="https://github.com/user-attachments/assets/9a361354-b496-4475-9be3-df814f4e01e8" />
+<br>
 <img src="https://github.com/user-attachments/assets/e72e9ff3-65df-445e-bb65-6b6639d3767e" />
+<br>
 <img src="https://github.com/user-attachments/assets/64d4be54-8a5a-461c-adb4-1ab1196825ad" />
+<br>
 <img src="https://github.com/user-attachments/assets/64f0d74a-3681-425d-a557-96dde3acba1a" />
+<br>
 <img src="https://github.com/user-attachments/assets/1d692f22-048e-47e7-8409-5848a8f67ad3" />
+<br>
 <img src="https://github.com/user-attachments/assets/2f894445-1b9f-4bc2-b6ba-27e91b6558b5" />
+<br>
 <img src="https://github.com/user-attachments/assets/e8e84287-97d8-4e3d-b1ec-7cb1288b6392" />
+<br>
 <img src="https://github.com/user-attachments/assets/4f2382b1-80e4-49f6-993d-b9b523555e29" />
+<br>
 <img width="1901" height="797" alt="1" src="https://github.com/user-attachments/assets/0b88ccb8-b0ae-4190-bfeb-0d92ec40bf79" />
+<br>
 <img width="1878" height="912" alt="1 2" src="https://github.com/user-attachments/assets/58d2b0b0-f10c-44fd-9e81-1e9228a89e53" />
 
 
@@ -126,10 +142,14 @@ Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerin
 <summary>💡 Bloglar Sayfası</summary>
 
 <br>
-
+<img width="1895" height="918" alt="image" src="https://github.com/user-attachments/assets/04a91d9b-6e28-4e1b-aada-db7b6dd59b0b" />
+<br>
 <img src="https://github.com/user-attachments/assets/a5c86993-3868-4efe-bdc8-c25347996385" />
+<br>
 <img src="https://github.com/user-attachments/assets/f23605c4-09d5-4f6a-a77c-cb9a2eb9e56f" />
+<br>
 <img src="https://github.com/user-attachments/assets/a77a4f59-91f0-40f9-adb8-7c6fceb58d7a" />
+<br>
 <img src="https://github.com/user-attachments/assets/abec77d6-9932-4506-9b11-2d4b53ae7d9e" />
 
 </details>
