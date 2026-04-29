@@ -12,32 +12,32 @@ InsureYou AI, geleneksel sigortacılık süreçlerini dünyanın en güçlü yap
 
 OpenAI (GPT-4o/o1):
 
-Admin panelinde sektörel makale ve blog içerikleri üretimi.
+🔹Admin panelinde sektörel makale ve blog içerikleri üretimi.
 
-Kişiselleştirilmiş Plan Önerileri: Kullanıcı bilgilerini analiz ederek en uygun sigorta paketini sunan akıllı tavsiye motoru.
+🔹Kişiselleştirilmiş Plan Önerileri: Kullanıcı bilgilerini analiz ederek en uygun sigorta paketini sunan akıllı tavsiye motoru.
 
-DALL-E Entegrasyonu: Poliçe ve içerikler için dinamik görsel üretimi.
+🔹DALL-E Entegrasyonu: Poliçe ve içerikler için dinamik görsel üretimi.
 
-Google Gemini: Anasayfa içeriklerinin dinamik oluşturulması ve gelen mesajların otomatik kategorize edilmesi.
+🔹Google Gemini: Anasayfa içeriklerinin dinamik oluşturulması ve gelen mesajların otomatik kategorize edilmesi.
 
-Anthropic Claude: Müşteri yorumları simülasyonu, otomatik mail yanıtları ve karmaşık PDF doküman analizi.
+🔹Anthropic Claude: Müşteri yorumları simülasyonu, otomatik mail yanıtları ve karmaşık PDF doküman analizi.
 
 📊 Veri Analitiği & ML.NET
 Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerinden gelecek 3 aya ait poliçe satış projeksiyonları ve analitik tahminleme.
 
 🛡️ NLP ve Moderasyon (Hugging Face)
-Helsinki-NLP: Yerel modellerle TR-EN çeviri süreçleri.
+🔹Helsinki-NLP: Yerel modellerle TR-EN çeviri süreçleri.
 
-Toksik Yorum Kontrolü: AI modelleri ile yorumların otomatik denetlenmesi.
+🔹Toksik Yorum Kontrolü: AI modelleri ile yorumların otomatik denetlenmesi.
 
-Kullanıcı Davranış Analizi: Yazılan metinler üzerinden kullanıcı kişilik ve eğilim profili çıkarma.
+🔹Kullanıcı Davranış Analizi: Yazılan metinler üzerinden kullanıcı kişilik ve eğilim profili çıkarma.
 
 🔊 Sesli Sistemler ve Real-Time
-ElevenLabs AI: Metin içeriklerinin profesyonel seslendirilmesi ve Sesli Asistan deneyimi.
+🔹ElevenLabs AI: Metin içeriklerinin profesyonel seslendirilmesi ve Sesli Asistan deneyimi.
 
-SignalR AI Chat: Yapay zeka ile anlık ve akışkan (streaming) mesajlaşma altyapısı.
+🔹SignalR AI Chat: Yapay zeka ile anlık ve akışkan (streaming) mesajlaşma altyapısı.
 
-Tavily AI: İnternet üzerinden güncel sigortacılık verilerini tarayan akıllı araştırma botu.
+🔹Tavily AI: İnternet üzerinden güncel sigortacılık verilerini tarayan akıllı araştırma botu.
 
 
 <img width="906" height="441" alt="image" src="https://github.com/user-attachments/assets/9c65110c-efad-491d-aaf8-04b7f1733cb7" />
