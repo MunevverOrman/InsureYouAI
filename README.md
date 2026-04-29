@@ -1,0 +1,123 @@
+🛡️ InsureYouAI - Yapay Zeka Destekli Sigorta Platformu
+ASP.NET Core 9.0 | Multi-Model AI Integration | Machine Learning | Real-Time Systems
+InsureYou AI, geleneksel sigortacılık süreçlerini dünyanın en güçlü yapay zeka modelleriyle modernize eden, uçtan uca geliştirilmiş kurumsal bir backend çözümüdür. Bu proje; içerik yönetiminden veri analitiğine, sesli asistandan PDF analizine kadar 10'dan fazla farklı AI servisini .NET 9 çatısı altında birleştirir.
+
+🚀 Öne Çıkan AI Entegrasyonları & Senaryolar
+🧠 Akıllı Karar ve İçerik Sistemleri
+OpenAI (GPT-4o/o1):
+
+Admin panelinde sektörel makale ve blog içerikleri üretimi.
+
+Kişiselleştirilmiş Plan Önerileri: Kullanıcı bilgilerini analiz ederek en uygun sigorta paketini sunan akıllı tavsiye motoru.
+
+DALL-E Entegrasyonu: Poliçe ve içerikler için dinamik görsel üretimi.
+
+Google Gemini: Anasayfa içeriklerinin dinamik oluşturulması ve gelen mesajların otomatik kategorize edilmesi.
+
+Anthropic Claude: Müşteri yorumları simülasyonu, otomatik mail yanıtları ve karmaşık PDF doküman analizi.
+
+📊 Veri Analitiği & ML.NET
+Satış Tahminleme: ML.NET kütüphanesi kullanılarak, geçmiş veriler üzerinden gelecek 3 aya ait poliçe satış projeksiyonları ve analitik tahminleme.
+
+🛡️ NLP ve Moderasyon (Hugging Face)
+Helsinki-NLP: Yerel modellerle TR-EN çeviri süreçleri.
+
+Toksik Yorum Kontrolü: AI modelleri ile yorumların otomatik denetlenmesi.
+
+Kullanıcı Davranış Analizi: Yazılan metinler üzerinden kullanıcı kişilik ve eğilim profili çıkarma.
+
+🔊 Sesli Sistemler ve Real-Time
+ElevenLabs AI: Metin içeriklerinin profesyonel seslendirilmesi ve Sesli Asistan deneyimi.
+
+SignalR AI Chat: Yapay zeka ile anlık ve akışkan (streaming) mesajlaşma altyapısı.
+
+Tavily AI: İnternet üzerinden güncel sigortacılık verilerini tarayan akıllı araştırma botu.
+
+<img width="876" height="520" alt="image" src="https://github.com/user-attachments/assets/6a9a42a3-de2a-4d72-ab60-78edd01bd4a8" />
+
+📸 Ekran Görüntüleri
+
+🏠 Anasayfa
+
+<img width="1902" height="917" alt="default" src="https://github.com/user-attachments/assets/3b5ee81e-80f1-438c-8df0-f44fc5f81e02" />
+
+<img width="1900" height="872" alt="default2" src="https://github.com/user-attachments/assets/43af8223-e479-4f4a-9d92-276983b199e3" />
+
+<img width="1902" height="907" alt="default3" src="https://github.com/user-attachments/assets/25613893-639b-4b49-bd94-cff24323774f" />
+
+<img width="1897" height="878" alt="default4" src="https://github.com/user-attachments/assets/fafda9af-5e99-4375-9abb-ed88adfcea31" />
+
+<img width="1892" height="831" alt="default5" src="https://github.com/user-attachments/assets/ea897438-d879-4e11-ae93-0f611e89f7e2" />
+
+<img width="1885" height="821" alt="default6" src="https://github.com/user-attachments/assets/37c9f2be-54d0-4d7a-9fb2-f034f18603b6" />
+
+
+<img width="1897" height="891" alt="deault7" src="https://github.com/user-attachments/assets/3e45a9fe-bbfc-4ad5-9ec8-c15561acdad7" />
+
+<img width="1892" height="847" alt="default8" src="https://github.com/user-attachments/assets/5672aabc-7ad5-42a4-882b-34e476dcf0e9" />
+
+<img width="1891" height="880" alt="default9" src="https://github.com/user-attachments/assets/90aa560b-4ae1-48de-bbca-a9530c8d92d9" />
+
+
+<img width="1870" height="897" alt="default10" src="https://github.com/user-attachments/assets/237445de-6d8a-472f-bbdf-9b19fab9a182" />
+
+⚙️ Admin Paneli
+
+<img width="1890" height="905" alt="ınsureyouymesajlist" src="https://github.com/user-attachments/assets/948b1975-cf57-4be6-956a-79d795430c87" />
+
+<img width="1883" height="910" alt="aiöneri" src="https://github.com/user-attachments/assets/d5ed6c8a-e419-433a-9cc6-b3c0a028d96d" />
+
+<img width="1887" height="887" alt="ai" src="https://github.com/user-attachments/assets/8ec7caae-e119-4227-b488-c4eb6b9a253e" />
+
+<img width="1900" height="910" alt="pdfanaliz1" src="https://github.com/user-attachments/assets/be3ed8fa-1eaa-4545-b39c-b0862b89dae2" />
+
+
+<img width="1900" height="910" alt="ai2" src="https://github.com/user-attachments/assets/2858613a-05c5-4a76-8934-6f15cef16802" />
+
+<img width="1887" height="796" alt="tavily1" src="https://github.com/user-attachments/assets/c2ef1983-5659-4351-bbd8-4f3182bb85e4" />
+
+<img width="1887" height="915" alt="ai ile makale olus" src="https://github.com/user-attachments/assets/4b125c55-81ab-4d37-8e7d-90d8dd965443" />
+
+<img width="1886" height="910" alt="makaleler" src="https://github.com/user-attachments/assets/9a361354-b496-4475-9be3-df814f4e01e8" />
+
+<img width="1905" height="913" alt="ödeme planları" src="https://github.com/user-attachments/assets/e72e9ff3-65df-445e-bb65-6b6639d3767e" />
+
+<img width="1903" height="815" alt="about sayfası" src="https://github.com/user-attachments/assets/64d4be54-8a5a-461c-adb4-1ab1196825ad" />
+
+<img width="1887" height="917" alt="dsh" src="https://github.com/user-attachments/assets/64f0d74a-3681-425d-a557-96dde3acba1a" />
+
+<img width="1900" height="812" alt="aboutitem" src="https://github.com/user-attachments/assets/1d692f22-048e-47e7-8409-5848a8f67ad3" />
+
+
+<img width="1897" height="913" alt="dsh1" src="https://github.com/user-attachments/assets/2f894445-1b9f-4bc2-b6ba-27e91b6558b5" />
+
+<img width="1877" height="902" alt="dsh2" src="https://github.com/user-attachments/assets/e8e84287-97d8-4e3d-b1ec-7cb1288b6392" />
+
+<img width="1877" height="893" alt="signaır" src="https://github.com/user-attachments/assets/4f2382b1-80e4-49f6-993d-b9b523555e29" />
+
+
+
+💡Bloglar Sayfası
+
+<img width="1882" height="913" alt="bloglar" src="https://github.com/user-attachments/assets/a5c86993-3868-4efe-bdc8-c25347996385" />
+
+<img width="1893" height="907" alt="blogdetay1" src="https://github.com/user-attachments/assets/f23605c4-09d5-4f6a-a77c-cb9a2eb9e56f" />
+
+<img width="1897" height="887" alt="blogdetay2" src="https://github.com/user-attachments/assets/a77a4f59-91f0-40f9-adb8-7c6fceb58d7a" />
+
+<img width="1891" height="895" alt="blogdetay3" src="https://github.com/user-attachments/assets/abec77d6-9932-4506-9b11-2d4b53ae7d9e" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
